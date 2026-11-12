@@ -1,10 +1,10 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GnOmics — Join us</title><style>
 :root{--paper:#fffdfe;--ink:#322851;--muted:#6f6785;--rule:#e7e4ea;--accent:#605777;--stage:#f9f6f9;--stage-ink:#43395f}
 *{box-sizing:border-box}html{background:var(--paper)}body{margin:0;color:var(--ink);font-family:"Helvetica Neue",Arial,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;-webkit-font-smoothing:antialiased}
-button{font:inherit;cursor:pointer;background:none;border:0;padding:0;color:inherit}button:focus-visible,a:focus-visible{outline:2px solid #a8a2b5;outline-offset:3px}
+button{font:inherit;cursor:pointer;background:none;border:0;padding:0;color:inherit}button:focus-visible{outline:2px solid #a8a2b5;outline-offset:3px}
 .shell{min-height:100vh;display:flex;flex-direction:column;padding:0 3.4vw;max-width:2000px;margin:auto}
 .top{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{text-decoration:none;display:inline-block;color:var(--ink)}.brand{font-size:23px;font-weight:680;letter-spacing:-.075em}.brand i{font-style:normal;color:#756d89}
+.brand{font-size:23px;font-weight:680;letter-spacing:-.075em}.brand i{font-style:normal;color:#756d89}
 .top nav{display:flex;gap:30px;font-size:14px;color:var(--muted)}.top nav a{color:inherit;text-decoration:none}.top nav a:hover{color:var(--ink)}
 .micro{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.11em;font-size:10px;text-transform:uppercase}
 .hero{display:grid;grid-template-columns:minmax(300px,34%) minmax(0,1fr);gap:0;min-height:min(720px,80vh);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
@@ -182,7 +182,7 @@ body.pg .lede{margin-top:16px;font-size:14px;line-height:1.65}
 .grp{padding-top:26px}
 .grp-h{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--ink);padding-bottom:9px;transition:opacity .35s}
 .grp-h .k{font:10px ui-monospace,monospace;color:#d6336c;letter-spacing:.1em}
-.grp-h h2{margin:0;font-family:Georgia,serif;font-weight:400;font-size:24px;letter-spacing:-.03em}
+.grp-h h3{margin:0;font-family:Georgia,serif;font-weight:400;font-size:24px;letter-spacing:-.03em}
 .grp-h .m{margin-left:auto;font:10px ui-monospace,monospace;color:#8a839c;letter-spacing:.08em;text-transform:uppercase}
 .item{display:grid;grid-template-columns:44px 1fr auto;gap:4px 14px;padding:14px 0;border-bottom:1px solid var(--rule);transition:opacity .35s,background .2s;position:relative}
 .item:hover{background:rgba(255,255,255,.55)}
@@ -221,7 +221,7 @@ body.pg .hero{grid-template-columns:minmax(300px,34%) minmax(0,1fr)!important}
  body.pg .item .sub{grid-column:2}
  body.pg .jrow{grid-template-columns:1fr}body.pg .jrow .tt,body.pg .jrow .tag,body.pg .jrow .sub{grid-column:1}
  body.pg .news{grid-template-columns:68px 1fr;gap:12px}body.pg .news .th{width:68px;height:68px}body.pg .news .tag{display:none}
- body.pg .grp-h h2{font-size:20px}
+ body.pg .grp-h h3{font-size:20px}
  .visual{margin:0!important}
  .visual-footer strong{white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
  .visual-footer>.micro:last-child{display:none}
@@ -236,18 +236,15 @@ body.pg .hero{grid-template-columns:minmax(300px,34%) minmax(0,1fr)!important}
 @media(max-width:900px){.top nav{display:flex!important;gap:16px;font-size:12px}.top nav a{white-space:nowrap}}
 @media(max-width:700px){.top{height:auto;display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:15px 0 8px}.top nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:0!important;border-top:1px solid var(--rule);font-size:12px}.top nav a{display:flex;align-items:center;min-height:44px;border-bottom:1px solid var(--rule);padding:0 2px;white-space:nowrap}}
 @media(max-width:340px){.top nav{font-size:11px}}
-@media(min-width:701px) and (max-width:900px){body.pg .hero{flex-direction:column;min-height:0!important;height:auto!important;overflow:visible}body.pg .panel{padding:28px 0 20px;overflow:visible;-webkit-mask-image:none;mask-image:none}body.pg .board{min-height:0;overflow:visible}body.pg .scroll{overflow:visible;max-height:none}}
-@media(max-width:700px){body.pg .hero{flex-direction:column;min-height:0!important;height:auto!important;overflow:visible}body.pg .panel{padding:26px 0 20px;overflow:visible;-webkit-mask-image:none;mask-image:none}body.pg .board{min-height:0;overflow:visible}body.pg .strip{display:block;height:292px}body.pg .strip .cap,body.pg .strip .cap2{display:none}body.pg .scroll{overflow:visible;padding:6px 0 32px}body.pg .steps{grid-template-columns:repeat(2,minmax(0,1fr))}body.pg .step{border-bottom:1px solid var(--rule);margin-right:0;padding:14px 10px 16px 0;min-width:0}body.pg .step:nth-child(2n){border-right:0;padding-left:10px}body.pg .step:nth-last-child(-n+2){border-bottom:0}}
+@media(max-width:700px){body.pg .hero{flex-direction:column;min-height:0!important;height:auto!important;overflow:visible}body.pg .panel{padding:26px 0 20px;overflow:visible;-webkit-mask-image:none;mask-image:none}body.pg .board{min-height:0;overflow:visible}body.pg .strip{display:none}body.pg .scroll{overflow:visible;padding:6px 0 32px}body.pg .steps{grid-template-columns:repeat(2,minmax(0,1fr))}body.pg .step{border-bottom:1px solid var(--rule);margin-right:0;padding:14px 10px 16px 0;min-width:0}body.pg .step:nth-child(2n){border-right:0;padding-left:10px}body.pg .step:nth-last-child(-n+2){border-bottom:0}}
 @media(max-width:360px){body.pg .steps{grid-template-columns:1fr}body.pg .step{border-right:0;margin-right:0;padding:12px 0}body.pg .step:nth-child(2n){padding-left:0}body.pg .step:nth-last-child(2){border-bottom:1px solid var(--rule)}}
-@media(min-width:901px) and (max-height:760px){body.pg .hero{height:auto;min-height:560px;overflow:visible}body.pg .panel{overflow:visible;-webkit-mask-image:none;mask-image:none}}
-@media(prefers-reduced-motion:reduce){body.pg .scroll{scroll-behavior:auto!important}}
 </style></head>
-<body class="ppl pg"><div class="shell"><header class="top"><a class="brand" href="index.html" aria-label="GnOmics 홈">Gn<i>O</i>mics<span style="font-weight:400">.</span></a><nav aria-label="페이지 탐색"><a href="index.html">Research</a><a href="projects.html">Projects</a><a href="people.html">People</a><a href="publications.html">Publications</a><a href="news.html">News</a><a href="join.html" class="on" aria-current="page">Join us</a></nav></header>
+<body class="ppl pg"><div class="shell"><header class="top"><div class="brand" onclick="location.href='index.html'" style="cursor:pointer">Gn<i>O</i>mics<span style="font-weight:400">.</span></div><nav aria-label="페이지 탐색"><a href="index.html">Research</a><a href="projects.html">Projects</a><a href="people.html">People</a><a href="publications.html">Publications</a><a href="news.html">News</a><a href="join.html" class="on">Join us</a></nav></header>
 <main class="hero"><section class="panel"><div class="eyebrow micro">GNOMICS LAB · JOIN US</div><h1>Come find<br><em>the next signal.</em></h1>
 
-<ul class="flt" id="flt"><li><button data-f="who" aria-pressed="false" aria-controls="g-who"><span class="n">01</span><span class="t">Who we look for</span><span class="c">입학</span></button></li><li><button data-f="apply" aria-pressed="false" aria-controls="g-apply"><span class="n">02</span><span class="t">How to join</span><span class="c">지원 절차</span></button></li><li><button data-f="intern" aria-pressed="false" aria-controls="g-intern"><span class="n">03</span><span class="t">Internship</span><span class="c">인턴십 과정</span></button></li><li><button data-f="life" aria-pressed="false" aria-controls="g-life"><span class="n">04</span><span class="t">Graduate life</span><span class="c">대학원 생활</span></button></li><li><button data-f="research" aria-pressed="false" aria-controls="g-research"><span class="n">05</span><span class="t">Your research</span><span class="c">대학원생 연구</span></button></li></ul>
-<a class="cta" href="mailto:mesnger@kangwon.ac.kr?subject=%5BGnOmics%5D%20%EC%97%B0%EA%B5%AC%EC%8B%A4%20%EB%AC%B8%EC%9D%98"><span class="micro">Contact</span><b>mesnger@kangwon.ac.kr</b><span class="ar">↗</span></a></section><section class="board"><div class="strip"><canvas id="sc" role="img" aria-label="연락부터 합류까지 아미노산 단위, 사슬, 나선, 접힌 단백질로 이어지는 네 단계"></canvas><div class="cap micro" id="cap">RESIDUES → CHAIN → HELIX → PROTEIN</div><div class="cap2 micro">FIG. 08 / JOIN US</div></div>
-<div class="scroll" id="scroll"><section class="grp" id="g-who" data-f="who"><div class="grp-h"><span class="k">01</span><h2>Who we look for</h2><span class="m">입학</span></div><div class="item jrow"><span class="no"></span><span class="tt">학부 전공은 관계없습니다.</span><span class="tag"></span><span class="sub">생물학, 컴퓨터, 통계 지식이 있으면 도움이 되지만, 배경 지식이 없어도 입학 후 배울 수 있습니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">지적 호기심과 도전.</span><span class="tag"></span><span class="sub">새로운 것에 도전하는 것을 좋아하는 사람을 찾습니다.</span></div></section><section class="grp" id="g-apply" data-f="apply"><div class="grp-h"><span class="k">02</span><h2>How to join</h2><span class="m">지원 절차</span></div><div class="steps"><div class="step" data-s="0"><span class="sn micro">01</span><span class="st">연락</span><span class="sd">홈페이지 또는 교수 이메일로 연락합니다.</span></div><div class="step" data-s="1"><span class="sn micro">02</span><span class="st">상담</span><span class="sd">교수 상담 후 인턴십 일정을 조율합니다.</span></div><div class="step" data-s="2"><span class="sn micro">03</span><span class="st">인턴십</span><span class="sd">4~8주간 연구실에서 함께 지냅니다.</span></div><div class="step" data-s="3"><span class="sn micro">04</span><span class="st">진학 결정</span><span class="sd">인턴십을 마친 뒤 진학을 결정합니다.</span></div></div></section><section class="grp" id="g-intern" data-f="intern"><div class="grp-h"><span class="k">03</span><h2>Internship</h2><span class="m">인턴십 과정</span></div><div class="item jrow"><span class="no"></span><span class="tt">4~8주 동안 배우는 것.</span><span class="tag"></span><span class="sub">서버 사용과 연구실 데이터 관리 방법을 익힙니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">연구 미팅 참석.</span><span class="tag"></span><span class="sub">연구 미팅에 참석하고, 논문을 읽고 발표합니다.</span></div></section><section class="grp" id="g-life" data-f="life"><div class="grp-h"><span class="k">04</span><h2>Graduate life</h2><span class="m">대학원 생활</span></div><div class="item jrow"><span class="no"></span><span class="tt">유연한 근무.</span><span class="tag"></span><span class="sub">출퇴근 시간이 유연하며 원격 근무, 재택 근무도 가능합니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">랩미팅.</span><span class="tag"></span><span class="sub">각자의 연구 진행 상황을 공유하고 지도를 받는 시간입니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">저널미팅.</span><span class="tag"></span><span class="sub">최신 연구 동향을 리뷰하고 공유하는 시간입니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">프로젝트미팅.</span><span class="tag"></span><span class="sub">프로젝트별로 진행 상황을 점검합니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">학회.</span><span class="tag"></span><span class="sub">국내외 학회 참석과 발표를 지원합니다.</span></div></section><section class="grp" id="g-research" data-f="research"><div class="grp-h"><span class="k">05</span><h2>Your research</h2><span class="m">대학원생 연구</span></div><div class="item jrow"><span class="no"></span><span class="tt">프로젝트 배정.</span><span class="tag"></span><span class="sub">연구실에서 진행 중인 프로젝트 중 본인의 선호도를 반영해 연구 프로젝트를 배정받습니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">외부 연구자와의 협업.</span><span class="tag"></span><span class="sub">프로젝트별로 외부 연구자와 주기적으로 회의하며 연구를 진행합니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">논문으로 마무리.</span><span class="tag"></span><span class="sub">최종적으로 논문을 작성하고 출판합니다.</span></div></section><section class="grp contact"><div class="grp-h"><span class="k">06</span><h2>Contact</h2><span class="m">문의</span></div>
+<ul class="flt" id="flt"><li><button data-f="who" aria-pressed="false"><span class="n">01</span><span class="t">Who we look for</span><span class="c">입학</span></button></li><li><button data-f="apply" aria-pressed="false"><span class="n">02</span><span class="t">How to join</span><span class="c">지원 절차</span></button></li><li><button data-f="intern" aria-pressed="false"><span class="n">03</span><span class="t">Internship</span><span class="c">인턴십 과정</span></button></li><li><button data-f="life" aria-pressed="false"><span class="n">04</span><span class="t">Graduate life</span><span class="c">대학원 생활</span></button></li><li><button data-f="research" aria-pressed="false"><span class="n">05</span><span class="t">Your research</span><span class="c">대학원생 연구</span></button></li></ul>
+<a class="cta" href="mailto:mesnger@kangwon.ac.kr?subject=%5BGnOmics%5D%20%EC%97%B0%EA%B5%AC%EC%8B%A4%20%EB%AC%B8%EC%9D%98"><span class="micro">Contact</span><b>mesnger@kangwon.ac.kr</b><span class="ar">↗</span></a></section><section class="board"><div class="strip"><canvas id="sc"></canvas><div class="cap micro" id="cap">CONTACT → INTERVIEW → INTERNSHIP → JOIN</div><div class="cap2 micro">FIG. 08 / JOIN US</div></div>
+<div class="scroll" id="scroll"><section class="grp" id="g-who" data-f="who"><div class="grp-h"><span class="k">01</span><h3>Who we look for</h3><span class="m">입학</span></div><div class="item jrow"><span class="no"></span><span class="tt">학부 전공은 관계없습니다.</span><span class="tag"></span><span class="sub">생물학, 컴퓨터, 통계 지식이 있으면 도움이 되지만, 배경 지식이 없어도 입학 후 배울 수 있습니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">지적 호기심과 도전.</span><span class="tag"></span><span class="sub">새로운 것에 도전하는 것을 좋아하는 사람을 찾습니다.</span></div></section><section class="grp" id="g-apply" data-f="apply"><div class="grp-h"><span class="k">02</span><h3>How to join</h3><span class="m">지원 절차</span></div><div class="steps"><div class="step" data-s="0"><span class="sn micro">01</span><span class="st">연락</span><span class="sd">홈페이지 또는 교수 이메일로 연락합니다.</span></div><div class="step" data-s="1"><span class="sn micro">02</span><span class="st">상담</span><span class="sd">교수 상담 후 인턴십 일정을 조율합니다.</span></div><div class="step" data-s="2"><span class="sn micro">03</span><span class="st">인턴십</span><span class="sd">4~8주간 연구실에서 함께 지냅니다.</span></div><div class="step" data-s="3"><span class="sn micro">04</span><span class="st">진학 결정</span><span class="sd">인턴십을 마친 뒤 진학을 결정합니다.</span></div></div></section><section class="grp" id="g-intern" data-f="intern"><div class="grp-h"><span class="k">03</span><h3>Internship</h3><span class="m">인턴십 과정</span></div><div class="item jrow"><span class="no"></span><span class="tt">4~8주 동안 배우는 것.</span><span class="tag"></span><span class="sub">서버 사용과 연구실 데이터 관리 방법을 익힙니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">연구 미팅 참석.</span><span class="tag"></span><span class="sub">연구 미팅에 참석하고, 논문을 읽고 발표합니다.</span></div></section><section class="grp" id="g-life" data-f="life"><div class="grp-h"><span class="k">04</span><h3>Graduate life</h3><span class="m">대학원 생활</span></div><div class="item jrow"><span class="no"></span><span class="tt">유연한 근무.</span><span class="tag"></span><span class="sub">출퇴근 시간이 유연하며 원격 근무, 재택 근무도 가능합니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">랩미팅.</span><span class="tag"></span><span class="sub">각자의 연구 진행 상황을 공유하고 지도를 받는 시간입니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">저널미팅.</span><span class="tag"></span><span class="sub">최신 연구 동향을 리뷰하고 공유하는 시간입니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">프로젝트미팅.</span><span class="tag"></span><span class="sub">프로젝트별로 진행 상황을 점검합니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">학회.</span><span class="tag"></span><span class="sub">국내외 학회 참석과 발표를 지원합니다.</span></div></section><section class="grp" id="g-research" data-f="research"><div class="grp-h"><span class="k">05</span><h3>Your research</h3><span class="m">대학원생 연구</span></div><div class="item jrow"><span class="no"></span><span class="tt">프로젝트 배정.</span><span class="tag"></span><span class="sub">연구실에서 진행 중인 프로젝트 중 본인의 선호도를 반영해 연구 프로젝트를 배정받습니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">외부 연구자와의 협업.</span><span class="tag"></span><span class="sub">프로젝트별로 외부 연구자와 주기적으로 회의하며 연구를 진행합니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">논문으로 마무리.</span><span class="tag"></span><span class="sub">최종적으로 논문을 작성하고 출판합니다.</span></div></section><section class="grp contact"><div class="grp-h"><span class="k">06</span><h3>Contact</h3><span class="m">문의</span></div>
 <div class="item jrow"><span class="no"></span><span class="tt"><a href="mailto:mesnger@kangwon.ac.kr">mesnger@kangwon.ac.kr</a></span><span class="tag">Prof. Jaeyong Choi</span><span class="sub">최재용 교수 · 대학원 진학과 인턴십 문의</span></div></section></div></section></main>
 <footer class="bottom"><span>Department of Medicine, Kangwon National University · 강원도 춘천시 강원대학길 1 의과대학 1호관 302호</span><span>GnOmics / Join us</span></footer></div>
 <script>
@@ -255,57 +252,44 @@ const F=['who','apply','intern','life','research'];let sel=null,hov=null,step=-1
 const cv=document.getElementById('sc'),ctx=cv.getContext('2d');let W=0,H=0,DPR=1;
 function rs(){const r=cv.getBoundingClientRect();DPR=Math.min(2,devicePixelRatio||1);W=r.width;H=r.height;cv.width=W*DPR;cv.height=H*DPR}addEventListener('resize',rs);rs();
 const C={ink:[42,31,74],teal:[75,59,143],blue:[143,132,196],pink:[217,135,168],sig:[214,51,108]};const rgba=(c,a)=>`rgba(${c[0]},${c[1]},${c[2]},${a})`;
-const STAGES=[['CONTACT','RESIDUES'],['INTERVIEW','CHAIN'],['INTERNSHIP','HELIX'],['JOIN','PROTEIN']];
-const phaseFor={who:0,apply:1,intern:2,life:3,research:3};
-const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-let hoverStep=-1;
-const T0=performance.now();
-function polygon(cx,cy,r,color){
- ctx.fillStyle=color;ctx.beginPath();
- for(let k=0;k<4;k++){const a=Math.PI/4+k*Math.PI/2;k?ctx.lineTo(cx+Math.cos(a)*r,cy+Math.sin(a)*r):ctx.moveTo(cx+Math.cos(a)*r,cy+Math.sin(a)*r)}
- ctx.closePath();ctx.fill();
-}
-function motif(i,t,ink){
- ctx.lineCap='round';ctx.lineJoin='round';
- if(i===0){ // linked amino-acid units: explicit bonds and side chains, not isolated dots
-   const pts=[[-34,8],[-18,-9],[-2,8],[14,-9],[30,8]];
-   ctx.strokeStyle=rgba(ink,.82);ctx.lineWidth=2.4;ctx.beginPath();pts.forEach((p,j)=>j?ctx.lineTo(...p):ctx.moveTo(...p));ctx.stroke();
-   pts.slice(1,4).forEach((p,j)=>{const tip=[p[0],p[1]+(j%2?19:-19)];ctx.strokeStyle=rgba(C.blue,.68);ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(...p);ctx.lineTo(...tip);ctx.stroke();polygon(...tip,3.6,rgba(j===1?C.pink:C.teal,.78))});
-   ctx.font='8px ui-monospace,Menlo,monospace';ctx.textAlign='center';ctx.fillStyle=rgba(C.ink,.52);ctx.fillText('N',-42,8);ctx.fillText('C',38,8);
- }else if(i===1){ // the same units connected into one long, irregular polypeptide
-   ctx.strokeStyle=rgba(ink,.88);ctx.lineWidth=2.8;ctx.beginPath();ctx.moveTo(-36,7);ctx.bezierCurveTo(-22,-19,-13,-13,-5,5);ctx.bezierCurveTo(3,22,9,-24,21,-10);ctx.bezierCurveTo(29,1,30,17,37,8);ctx.stroke();
-   [[-28,-5,-34,-18],[-13,-10,-10,-27],[3,8,-2,25],[18,-11,22,-26],[30,6,40,20]].forEach((p,j)=>{ctx.strokeStyle=rgba(C.blue,.5);ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[2],p[3]);ctx.stroke();polygon(p[2],p[3],2.7,rgba(j%2?C.pink:C.teal,.7))});
- }else if(i===2){ // a regular helical secondary structure
-   for(let pass=0;pass<2;pass++){ctx.beginPath();for(let n=0;n<=90;n++){const u=n/90,x=-36+72*u,y=Math.sin(u*4.5*Math.PI)*18+(pass?4:-4);n?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.strokeStyle=rgba(pass?ink:C.blue,pass?.9:.32);ctx.lineWidth=pass?2.6:5;ctx.stroke()}
-   for(let j=1;j<=8;j++){const u=j/9,x=-36+72*u,y=Math.sin(u*4.5*Math.PI)*18;ctx.strokeStyle=rgba(C.pink,.42);ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x,y-7);ctx.lineTo(x,y+7);ctx.stroke()}
- }else{ // compact tertiary fold: the same parametric bead language as People
-   const pts=[];for(let n=0;n<110;n++){const u=n/109,s=u*Math.PI*2,ph=u*150,x=Math.sin(s)+2*Math.sin(2*s)+.42*Math.cos(ph),y=Math.cos(s)-2*Math.cos(2*s)+.25*Math.sin(ph*.5),z=-Math.sin(3*s);pts.push({x:x*14,y:y*12,z,u})}
-   ctx.strokeStyle=rgba(C.ink,.27);ctx.lineWidth=1;ctx.beginPath();pts.forEach((p,j)=>j?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.stroke();
-   pts.sort((a,b)=>a.z-b.z).forEach(p=>{const depth=.45+.55*(p.z+1)/2,c=p.u<.34?C.teal:p.u<.68?C.blue:C.pink;ctx.fillStyle=rgba(c,.62*depth+.2);ctx.beginPath();ctx.arc(p.x,p.y,1.6+1.1*depth,0,Math.PI*2);ctx.fill()});
-   ctx.strokeStyle=rgba(ink,.5);ctx.lineWidth=1.2;ctx.beginPath();ctx.ellipse(0,0,44,32,0,0,Math.PI*2);ctx.stroke();
- }
-}
-function frame(now){
- const t=reduced?0:now/1000,elapsed=(now-T0)/1000;
- const focus=phaseFor[sel]!=null?phaseFor[sel]:hoverStep>=0?hoverStep:phaseFor[hov]!=null?phaseFor[hov]:reduced?-1:Math.floor(elapsed/2.3)%4;
- step=focus;cv.dataset.activeStage=String(focus);
- ctx.setTransform(DPR,0,0,DPR,0,0);ctx.clearRect(0,0,W,H);
- if(W<10||H<10){requestAnimationFrame(frame);return}
- const mobile=W<=700,centers=mobile?[[W*.25,H*.25],[W*.75,H*.25],[W*.25,H*.74],[W*.75,H*.74]]:STAGES.map((_,i)=>[W*(i+.5)/4,H*.51]);
- if(!mobile){ctx.strokeStyle=rgba(C.ink,.13);ctx.lineWidth=1;for(let i=0;i<3;i++){ctx.beginPath();ctx.moveTo(centers[i][0]+47,centers[i][1]);ctx.lineTo(centers[i+1][0]-47,centers[i+1][1]);ctx.stroke()}}
- STAGES.forEach(([stage,form],i)=>{const [x,y]=centers[i],active=focus===i;ctx.save();ctx.translate(x,y);ctx.globalAlpha=active?1:.76;
-  if(active){ctx.strokeStyle=rgba(C.sig,.23);ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(0,0,49,37,0,0,Math.PI*2);ctx.stroke()}
-  motif(i,t,active?C.sig:C.ink);ctx.restore();
-  ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=rgba(active?C.sig:C.ink,active?1:.72);ctx.font='9px ui-monospace,Menlo,monospace';ctx.fillText(String(i+1).padStart(2,'0')+' / '+stage,x,y+45);
-  ctx.fillStyle=rgba(active?C.sig:C.blue,active?.9:.65);ctx.font='9px ui-monospace,Menlo,monospace';ctx.fillText(form,x,y+59)
- });
- requestAnimationFrame(frame)
-}
-requestAnimationFrame(frame);
+let sd=9;const R=()=>{sd=sd*16807%2147483647;return sd/2147483647};
+const L=[['CONTACT','DNA'],['INTERVIEW','RNA'],['INTERNSHIP','PEPTIDE'],['JOIN','PROTEIN']];
+const T0=performance.now();let auto=0;
+// 단백질 접힘 좌표 (People 페이지와 같은 형태)
+const fold=(u,cx,cy,sc,rot)=>{const s=u*Math.PI*2,x=Math.sin(s)+2*Math.sin(2*s),y=Math.cos(s)-2*Math.cos(2*s),z=-Math.sin(3*s),ph=u*150,hw=.42,X3=x+hw*Math.cos(ph),Z3=z+hw*Math.sin(ph),Y3=y+hw*.6*Math.sin(ph*.5);
+ return[cx+(X3*Math.cos(rot)+Z3*Math.sin(rot))*sc*.62,cy+Y3*sc*.55,-X3*Math.sin(rot)+Z3*Math.cos(rot)]};
+function frame(now){if(W<40||H<40){requestAnimationFrame(frame);return}const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,DPR,0,0);ctx.clearRect(0,0,W,H);
+ const top=44,bot=H-26,cy=(top+bot)/2+2,hh=(bot-top)*.38,x0=40,pw=(W-80)/4,cx=i=>x0+pw*(i+.5);
+ const cyc=10,u=el<1?-1:((el-1)%cyc)/cyc;auto=u<0?-1:Math.min(3,Math.floor(u*5));if(u>.96)auto=-1;
+ const act=(sel==='apply'||hov==='apply')&&step>=0&&hovStep?step:auto;if(!hovStep)step=act;
+ const lit=i=>act>=i&&act>=0,cur=i=>act===i;
+ const col=i=>cur(i)?C.sig:lit(i)?C.teal:C.blue,al=i=>cur(i)?1:lit(i)?.85:.45;
+ // 단계 사이 화살표
+ for(let i=0;i<3;i++){const xa=cx(i)+pw*(i===1?.36:.3),xb=cx(i+1)-pw*.3,on=act>i;ctx.strokeStyle=rgba(on?C.sig:C.ink,on?.6:.22);ctx.setLineDash(on?[]:[3,4]);ctx.beginPath();ctx.moveTo(xa,cy);ctx.lineTo(xb,cy);ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle=rgba(on?C.sig:C.ink,on?.7:.3);ctx.beginPath();ctx.moveTo(xb,cy);ctx.lineTo(xb-6,cy-3.5);ctx.lineTo(xb-6,cy+3.5);ctx.fill();
+  }
+ // 01 DNA 이중나선
+ {const x=cx(0),w=pw*.5,c=col(0),a=al(0);for(let k=0;k<2;k++){ctx.strokeStyle=rgba(k?C.ink:c,a*(k?.6:1));ctx.lineWidth=1.6;ctx.beginPath();for(let j=0;j<=60;j++){const xx=x-w/2+w*j/60,ph=j/60*Math.PI*4+t*(cur(0)?2:.6)+k*Math.PI;const yy=cy+Math.sin(ph)*hh*.55;j?ctx.lineTo(xx,yy):ctx.moveTo(xx,yy)}ctx.stroke()}
+  for(let j=0;j<=12;j++){const xx=x-w/2+w*j/12,ph=j/12*Math.PI*4+t*(cur(0)?2:.6);ctx.strokeStyle=rgba(c,a*.35);ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(xx,cy+Math.sin(ph)*hh*.55);ctx.lineTo(xx,cy-Math.sin(ph)*hh*.55);ctx.stroke()}}
+ // 02 RNA 단일가닥
+ {const x=cx(1)-pw*.03,w=pw*.42,c=col(1),a=al(1);const n=lit(1)?40:Math.floor(40*.25);for(let j=0;j<40;j++){const xx=x-w/2+w*j/39,yy=cy+Math.sin(j*.45-t*(cur(1)?3:1))*hh*.35;ctx.fillStyle=rgba(c,a*(j<n||lit(1)?.9:.3));ctx.beginPath();ctx.arc(xx,yy,1.9,0,7);ctx.fill()}}
+ // 03 리보솜 + 펩타이드 사슬
+ {const x=cx(2),c=col(2),a=al(2),rw=pw*.13;ctx.fillStyle=rgba(C.blue,a*.35);ctx.beginPath();ctx.ellipse(x-pw*.12,cy-hh*.18,Math.max(1,rw),Math.max(1,hh*.32),0,0,7);ctx.fill();ctx.beginPath();ctx.ellipse(x-pw*.12,cy+hh*.22,Math.max(1,rw*1.2),Math.max(1,hh*.26),0,0,7);ctx.fill();
+  ctx.strokeStyle=rgba(C.pink,a*.8);ctx.beginPath();ctx.moveTo(x-pw*.3,cy+hh*.02);ctx.lineTo(x+pw*.06,cy+hh*.02);ctx.stroke();
+  const nb=cur(2)?Math.floor(4+((t*4)%8)):lit(2)?10:5;for(let j=0;j<nb;j++){const bx=x-pw*.04+j*7.5,by=cy-hh*.25-Math.sin(j*.7+t)*hh*.22-j*1.2;ctx.fillStyle=rgba(j%3===0?C.pink:c,a*.95);ctx.beginPath();ctx.arc(bx,by,3,0,7);ctx.fill()}}
+ // 04 접힌 단백질 = GnOmics
+ {const x=cx(3),c=col(3),a=al(3),sc=Math.min(pw*.16,hh*.55),pts=[];const k=lit(3)?1:.0;for(let j=0;j<120;j++){const uu=j/120,f=fold(uu,x,cy,sc,t*.3),lx=x-pw*.3+pw*.6*uu,ly=cy;const m=cur(3)?Math.min(1,((u*5)-3)/.9):k;pts.push([lx+(f[0]-lx)*m,ly+(f[1]-ly)*m,f[2],uu])}
+  pts.sort((p,q)=>p[2]-q[2]).forEach(p=>{const d=.55+.45*(p[2]+1.2)/2.4;ctx.fillStyle=rgba(lit(3)?(p[3]<.34?C.teal:p[3]<.68?C.blue:C.pink):C.blue,(lit(3)?.9:.4)*d*a);ctx.beginPath();ctx.arc(p[0],p[1],1.5+1.4*d,0,7);ctx.fill()});
+  if(cur(3)||lit(3)){ctx.strokeStyle=rgba(C.sig,.35);ctx.beginPath();ctx.arc(x,cy,sc*1.7+Math.sin(t*2.5)*2,0,7);ctx.stroke()}}
+ // 단계 라벨
+ ctx.font='9.5px ui-monospace,Menlo,monospace';ctx.textAlign='center';ctx.textBaseline='top';
+ L.forEach(([a1,b1],i)=>{ctx.fillStyle=rgba(cur(i)?C.sig:[128,121,147],1);ctx.fillText(String(i+1).padStart(2,'0')+'  '+a1,cx(i),bot-6);if(i===2){ctx.fillStyle=rgba(cur(i)?C.sig:[170,163,188],1);ctx.fillText('4–8 WEEKS',cx(i),bot+6)}});
+ requestAnimationFrame(frame)}requestAnimationFrame(frame);
+let hovStep=false;
 setInterval(()=>{document.querySelectorAll('.step').forEach(s=>s.classList.toggle('on',+s.dataset.s===step))},120);
 function pick(f){sel=f;document.querySelectorAll('#flt button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===f?'true':'false'));
- document.querySelectorAll('.grp').forEach(g=>{const off=!!f&&!!g.dataset.f&&g.dataset.f!==f;g.querySelector('.grp-h').classList.toggle('dimmed',off);g.querySelectorAll('.item,.steps').forEach(it=>it.classList.toggle('dimmed',off))});
- if(f){const g=document.getElementById('g-'+f),sc=document.getElementById('scroll');if(sc.scrollHeight>sc.clientHeight+2&&getComputedStyle(sc).overflowY==='auto'){sc.scrollTo({top:g.offsetTop-sc.offsetTop-6,behavior:reduced?'auto':'smooth'})}else{g.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'})}}}
+ document.querySelectorAll('.grp').forEach(g=>{const off=!!f&&g.dataset.f!==f;g.querySelector('.grp-h').classList.toggle('dimmed',off);g.querySelectorAll('.item,.steps').forEach(it=>it.classList.toggle('dimmed',off))});
+ if(f){const g=document.getElementById('g-'+f),sc=document.getElementById('scroll');sc.scrollTop=g.offsetTop-sc.offsetTop-6}}
 document.querySelectorAll('#flt button').forEach(b=>{b.onclick=()=>pick(sel===b.dataset.f?null:b.dataset.f);b.onmouseenter=()=>hov=b.dataset.f;b.onmouseleave=()=>hov=null});
-document.querySelectorAll('.step').forEach(s=>{s.onmouseenter=()=>{hov='apply';hoverStep=+s.dataset.s};s.onmouseleave=()=>{hov=null;hoverStep=-1}});
+document.querySelectorAll('.step').forEach(s=>{s.onmouseenter=()=>{hov='apply';hovStep=true;step=+s.dataset.s};s.onmouseleave=()=>{hov=null;hovStep=false}});
 </script></body></html>

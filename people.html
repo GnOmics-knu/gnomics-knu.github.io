@@ -344,4 +344,26 @@ function frame(now){const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,D
  P.forEach(p=>{const b=g[p.id];p.L.style.left=b.cx+'px';p.L.style.top=(p.id==='choi'?b.y-66:p.id==='lsj'?b.ly:p.id==='kjm'?b.ly:b.ly)+'px';p.L.classList.toggle('active',p.id===sel);p.L.classList.toggle('dim',!on(p.id))});
  requestAnimationFrame(frame)}
 requestAnimationFrame(frame);
+</script><style>
+.egg{position:absolute;z-index:7;left:30px;bottom:96px;width:86px;padding:7px 7px 12px;background:#fffaf1;box-shadow:0 10px 22px rgba(90,60,30,.25);transform:rotate(-6deg) scale(.4);opacity:0;pointer-events:none;transition:transform .7s cubic-bezier(.2,1.4,.4,1),opacity .4s;cursor:pointer;text-decoration:none}
+.egg.on{opacity:1;transform:rotate(-6deg) scale(1);pointer-events:auto}
+.egg:hover{transform:rotate(0) scale(1.08)}
+.egg i{display:block;aspect-ratio:1;background:linear-gradient(160deg,#f3dcc0,#d9a47f)}
+.egg b{display:block;font:400 15px "Nanum Pen Script","Apple SD Gothic Neo",cursive;color:#4a3428;text-align:center;margin-top:6px;line-height:1}
+.egg:before{content:"";position:absolute;top:-8px;left:50%;width:44px;height:14px;margin-left:-22px;background:rgba(240,214,160,.8);transform:rotate(4deg)}
+.egg-toast{position:absolute;z-index:7;left:130px;bottom:120px;font:400 22px "Nanum Pen Script","Apple SD Gothic Neo",cursive;color:#c8643c;opacity:0;transition:opacity .6s}
+.egg-toast.on{opacity:1}
+@media(max-width:700px){.egg{left:14px;bottom:70px;width:70px}.egg-toast{left:96px;bottom:90px;font-size:18px}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<script>
+(function(){const v=document.querySelector('.visual');if(!v||typeof select!=='function')return;
+ const a=document.createElement('a');a.className='egg';a.href='story.html';a.setAttribute('aria-label','연구실 이야기');a.innerHTML='<i></i><b>우리 이야기</b>';v.appendChild(a);
+ const t=document.createElement('div');t.className='egg-toast';t.textContent='찾았다! 우리 이야기 →';v.appendChild(t);
+ const seq=[];const ok=s=>{if(s.length<10)return false;const x=s.slice(-10).map(e=>e.id);
+  const A=x[2],B=x[3];return x[0]==='choi'&&x[1]==='kjm'&&x[4]==='lsj'&&x[5]==='choi'&&x[6]==='kjm'&&x[9]==='lsj'&&((A==='lsh'&&B==='pej')||(A==='pej'&&B==='lsh'))&&x[7]===B&&x[8]===A&&(s[s.length-1].t-s[s.length-10].t)<60000};
+ const show=()=>{a.classList.add('on');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),3500);sessionStorage.setItem('gn-egg','1')};
+ if(sessionStorage.getItem('gn-egg'))a.classList.add('on');
+ const orig=select;select=function(id){orig(id);if(id){seq.push({id,t:Date.now()});if(seq.length>20)seq.shift();if(ok(seq))show()}};
+})();
 </script></body></html>
