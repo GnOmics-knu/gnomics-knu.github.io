@@ -209,7 +209,30 @@ body.pg .lede{margin-top:16px;font-size:14px;line-height:1.65}
 .proj[aria-pressed="true"] .pn,.flt button[aria-pressed="true"] .n{color:#d6336c}
 body.pg .hero{grid-template-columns:minmax(300px,34%) minmax(0,1fr)!important}
 @media (max-height:780px){body.ppl .visual #bio{transform:scale(.82);transform-origin:top right}}
-</style><style>#focus-hint{display:none!important}</style><style id="nav-mobile-fix">
+</style><style>#focus-hint{display:none!important}</style><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23fffdfe'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23d6336c' stroke-width='9'/%3E%3C/svg%3E"><style id="mobile-fix-2">
+@media(max-width:700px){
+ body.pg .hero{display:flex!important;flex-direction:column;min-height:0!important;height:auto!important;overflow:visible;border-bottom:0}
+ body.pg .panel{padding:26px 0 18px;overflow:visible;-webkit-mask-image:none;mask-image:none}
+ body.pg .board{min-height:0;overflow:visible;margin:0 -20px;padding:0 20px}
+ body.pg .strip{display:none}
+ body.pg .scroll{overflow:visible;padding:0 0 32px}
+ body.pg .item{grid-template-columns:30px 1fr;gap:4px 10px}
+ body.pg .item .tag{grid-column:2;grid-row:auto;text-align:left;padding-top:0}
+ body.pg .item .sub{grid-column:2}
+ body.pg .jrow{grid-template-columns:1fr}body.pg .jrow .tt,body.pg .jrow .tag,body.pg .jrow .sub{grid-column:1}
+ body.pg .news{grid-template-columns:68px 1fr;gap:12px}body.pg .news .th{width:68px;height:68px}body.pg .news .tag{display:none}
+ body.pg .grp-h h3{font-size:20px}
+ .visual{margin:0!important}
+ .visual-footer strong{white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
+ .visual-footer>.micro:last-child{display:none}
+ .visual .tabs{left:14px!important;right:14px!important;top:14px!important;flex-wrap:wrap;gap:8px 14px!important;overflow:visible!important}
+ .visual .tab{font-size:12px!important}
+ .visual .stat{top:auto!important;bottom:84px;right:14px!important}
+ .visual-footer{left:14px!important;right:14px!important;bottom:16px!important}.visual-footer strong{font-size:22px!important}
+ .nlabel .nm{font-size:11px}.nlabel.pi .nm{font-size:14px}.nlabel .rl{display:none}
+ .bottom{flex-direction:column;gap:4px}
+}
+</style><style id="nav-mobile-fix">
 @media(max-width:900px){.top nav{display:flex!important;gap:16px;font-size:12px}.top nav a{white-space:nowrap}}
 @media(max-width:700px){.top{height:auto;display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:15px 0 8px}.top nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:0!important;border-top:1px solid var(--rule);font-size:12px}.top nav a{display:flex;align-items:center;min-height:44px;border-bottom:1px solid var(--rule);padding:0 2px;white-space:nowrap}}
 @media(max-width:340px){.top nav{font-size:11px}}
@@ -222,7 +245,7 @@ body.pg .hero{grid-template-columns:minmax(300px,34%) minmax(0,1fr)!important}
 <ul class="flt" id="flt"><li><button data-f="who" aria-pressed="false"><span class="n">01</span><span class="t">Who we look for</span><span class="c">입학</span></button></li><li><button data-f="apply" aria-pressed="false"><span class="n">02</span><span class="t">How to join</span><span class="c">지원 절차</span></button></li><li><button data-f="intern" aria-pressed="false"><span class="n">03</span><span class="t">Internship</span><span class="c">인턴십 과정</span></button></li><li><button data-f="life" aria-pressed="false"><span class="n">04</span><span class="t">Graduate life</span><span class="c">대학원 생활</span></button></li><li><button data-f="research" aria-pressed="false"><span class="n">05</span><span class="t">Your research</span><span class="c">대학원생 연구</span></button></li></ul>
 <a class="cta" href="mailto:mesnger@kangwon.ac.kr?subject=%5BGnOmics%5D%20%EC%97%B0%EA%B5%AC%EC%8B%A4%20%EB%AC%B8%EC%9D%98"><span class="micro">Contact</span><b>mesnger@kangwon.ac.kr</b><span class="ar">↗</span></a></section><section class="board"><div class="strip"><canvas id="sc"></canvas><div class="cap micro" id="cap">CONTACT → INTERVIEW → INTERNSHIP → JOIN</div><div class="cap2 micro">FIG. 08 / JOIN US</div></div>
 <div class="scroll" id="scroll"><section class="grp" id="g-who" data-f="who"><div class="grp-h"><span class="k">01</span><h3>Who we look for</h3><span class="m">입학</span></div><div class="item jrow"><span class="no"></span><span class="tt">학부 전공은 관계없습니다.</span><span class="tag"></span><span class="sub">생물학, 컴퓨터, 통계 지식이 있으면 도움이 되지만, 배경 지식이 없어도 입학 후 배울 수 있습니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">지적 호기심과 도전.</span><span class="tag"></span><span class="sub">새로운 것에 도전하는 것을 좋아하는 사람을 찾습니다.</span></div></section><section class="grp" id="g-apply" data-f="apply"><div class="grp-h"><span class="k">02</span><h3>How to join</h3><span class="m">지원 절차</span></div><div class="steps"><div class="step" data-s="0"><span class="sn micro">01</span><span class="st">연락</span><span class="sd">홈페이지 또는 교수 이메일로 연락합니다.</span></div><div class="step" data-s="1"><span class="sn micro">02</span><span class="st">상담</span><span class="sd">교수 상담 후 인턴십 일정을 조율합니다.</span></div><div class="step" data-s="2"><span class="sn micro">03</span><span class="st">인턴십</span><span class="sd">4~8주간 연구실에서 함께 지냅니다.</span></div><div class="step" data-s="3"><span class="sn micro">04</span><span class="st">진학 결정</span><span class="sd">인턴십을 마친 뒤 진학을 결정합니다.</span></div></div></section><section class="grp" id="g-intern" data-f="intern"><div class="grp-h"><span class="k">03</span><h3>Internship</h3><span class="m">인턴십 과정</span></div><div class="item jrow"><span class="no"></span><span class="tt">4~8주 동안 배우는 것.</span><span class="tag"></span><span class="sub">서버 사용과 연구실 데이터 관리 방법을 익힙니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">연구 미팅 참석.</span><span class="tag"></span><span class="sub">연구 미팅에 참석하고, 논문을 읽고 발표합니다.</span></div></section><section class="grp" id="g-life" data-f="life"><div class="grp-h"><span class="k">04</span><h3>Graduate life</h3><span class="m">대학원 생활</span></div><div class="item jrow"><span class="no"></span><span class="tt">유연한 근무.</span><span class="tag"></span><span class="sub">출퇴근 시간이 유연하며 원격 근무, 재택 근무도 가능합니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">랩미팅.</span><span class="tag"></span><span class="sub">각자의 연구 진행 상황을 공유하고 지도를 받는 시간입니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">저널미팅.</span><span class="tag"></span><span class="sub">최신 연구 동향을 리뷰하고 공유하는 시간입니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">프로젝트미팅.</span><span class="tag"></span><span class="sub">프로젝트별로 진행 상황을 점검합니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">학회.</span><span class="tag"></span><span class="sub">국내외 학회 참석과 발표를 지원합니다.</span></div></section><section class="grp" id="g-research" data-f="research"><div class="grp-h"><span class="k">05</span><h3>Your research</h3><span class="m">대학원생 연구</span></div><div class="item jrow"><span class="no"></span><span class="tt">프로젝트 배정.</span><span class="tag"></span><span class="sub">연구실에서 진행 중인 프로젝트 중 본인의 선호도를 반영해 연구 프로젝트를 배정받습니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">외부 연구자와의 협업.</span><span class="tag"></span><span class="sub">프로젝트별로 외부 연구자와 주기적으로 회의하며 연구를 진행합니다.</span></div><div class="item jrow"><span class="no"></span><span class="tt">논문으로 마무리.</span><span class="tag"></span><span class="sub">최종적으로 논문을 작성하고 출판합니다.</span></div></section><section class="grp contact"><div class="grp-h"><span class="k">06</span><h3>Contact</h3><span class="m">문의</span></div>
-<div class="item jrow"><span class="no"></span><span class="tt"><a href="mailto:mesnger@kangwon.ac.kr">mesnger@kangwon.ac.kr</a></span><span class="tag">Prof. Jaeyong Choi</span><span class="sub">강원도 춘천시 강원대학길 1 의과대학·의학전문대학원 1호관 302호 · Department of Medicine, Kangwon National University</span></div></section></div></section></main>
+<div class="item jrow"><span class="no"></span><span class="tt"><a href="mailto:mesnger@kangwon.ac.kr">mesnger@kangwon.ac.kr</a></span><span class="tag">Prof. Jaeyong Choi</span><span class="sub">최재용 교수 · 대학원 진학과 인턴십 문의</span></div></section></div></section></main>
 <footer class="bottom"><span>Department of Medicine, Kangwon National University · 강원도 춘천시 강원대학길 1 의과대학 1호관 302호</span><span>GnOmics / Join us</span></footer></div>
 <script>
 const F=['who','apply','intern','life','research'];let sel=null,hov=null,step=-1;
@@ -235,7 +258,7 @@ const T0=performance.now();let auto=0;
 // 단백질 접힘 좌표 (People 페이지와 같은 형태)
 const fold=(u,cx,cy,sc,rot)=>{const s=u*Math.PI*2,x=Math.sin(s)+2*Math.sin(2*s),y=Math.cos(s)-2*Math.cos(2*s),z=-Math.sin(3*s),ph=u*150,hw=.42,X3=x+hw*Math.cos(ph),Z3=z+hw*Math.sin(ph),Y3=y+hw*.6*Math.sin(ph*.5);
  return[cx+(X3*Math.cos(rot)+Z3*Math.sin(rot))*sc*.62,cy+Y3*sc*.55,-X3*Math.sin(rot)+Z3*Math.cos(rot)]};
-function frame(now){const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,DPR,0,0);ctx.clearRect(0,0,W,H);
+function frame(now){if(W<40||H<40){requestAnimationFrame(frame);return}const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,DPR,0,0);ctx.clearRect(0,0,W,H);
  const top=44,bot=H-26,cy=(top+bot)/2+2,hh=(bot-top)*.38,x0=40,pw=(W-80)/4,cx=i=>x0+pw*(i+.5);
  const cyc=10,u=el<1?-1:((el-1)%cyc)/cyc;auto=u<0?-1:Math.min(3,Math.floor(u*5));if(u>.96)auto=-1;
  const act=(sel==='apply'||hov==='apply')&&step>=0&&hovStep?step:auto;if(!hovStep)step=act;
@@ -251,7 +274,7 @@ function frame(now){const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,D
  // 02 RNA 단일가닥
  {const x=cx(1)-pw*.03,w=pw*.42,c=col(1),a=al(1);const n=lit(1)?40:Math.floor(40*.25);for(let j=0;j<40;j++){const xx=x-w/2+w*j/39,yy=cy+Math.sin(j*.45-t*(cur(1)?3:1))*hh*.35;ctx.fillStyle=rgba(c,a*(j<n||lit(1)?.9:.3));ctx.beginPath();ctx.arc(xx,yy,1.9,0,7);ctx.fill()}}
  // 03 리보솜 + 펩타이드 사슬
- {const x=cx(2),c=col(2),a=al(2),rw=pw*.13;ctx.fillStyle=rgba(C.blue,a*.35);ctx.beginPath();ctx.ellipse(x-pw*.12,cy-hh*.18,rw,hh*.32,0,0,7);ctx.fill();ctx.beginPath();ctx.ellipse(x-pw*.12,cy+hh*.22,rw*1.2,hh*.26,0,0,7);ctx.fill();
+ {const x=cx(2),c=col(2),a=al(2),rw=pw*.13;ctx.fillStyle=rgba(C.blue,a*.35);ctx.beginPath();ctx.ellipse(x-pw*.12,cy-hh*.18,Math.max(1,rw),Math.max(1,hh*.32),0,0,7);ctx.fill();ctx.beginPath();ctx.ellipse(x-pw*.12,cy+hh*.22,Math.max(1,rw*1.2),Math.max(1,hh*.26),0,0,7);ctx.fill();
   ctx.strokeStyle=rgba(C.pink,a*.8);ctx.beginPath();ctx.moveTo(x-pw*.3,cy+hh*.02);ctx.lineTo(x+pw*.06,cy+hh*.02);ctx.stroke();
   const nb=cur(2)?Math.floor(4+((t*4)%8)):lit(2)?10:5;for(let j=0;j<nb;j++){const bx=x-pw*.04+j*7.5,by=cy-hh*.25-Math.sin(j*.7+t)*hh*.22-j*1.2;ctx.fillStyle=rgba(j%3===0?C.pink:c,a*.95);ctx.beginPath();ctx.arc(bx,by,3,0,7);ctx.fill()}}
  // 04 접힌 단백질 = GnOmics

@@ -167,7 +167,30 @@ body.ppl .visual #bio{top:30px;right:30px;bottom:auto;left:auto}
 .proj[aria-pressed="true"] .pn,.flt button[aria-pressed="true"] .n{color:#d6336c}
 body.pg .hero{grid-template-columns:minmax(300px,34%) minmax(0,1fr)!important}
 @media (max-height:780px){body.ppl .visual #bio{transform:scale(.82);transform-origin:top right}}
-</style><style>#focus-hint{display:none!important}</style><style id="nav-mobile-fix">
+</style><style>#focus-hint{display:none!important}</style><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23fffdfe'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23d6336c' stroke-width='9'/%3E%3C/svg%3E"><style id="mobile-fix-2">
+@media(max-width:700px){
+ body.pg .hero{display:flex!important;flex-direction:column;min-height:0!important;height:auto!important;overflow:visible;border-bottom:0}
+ body.pg .panel{padding:26px 0 18px;overflow:visible;-webkit-mask-image:none;mask-image:none}
+ body.pg .board{min-height:0;overflow:visible;margin:0 -20px;padding:0 20px}
+ body.pg .strip{display:none}
+ body.pg .scroll{overflow:visible;padding:0 0 32px}
+ body.pg .item{grid-template-columns:30px 1fr;gap:4px 10px}
+ body.pg .item .tag{grid-column:2;grid-row:auto;text-align:left;padding-top:0}
+ body.pg .item .sub{grid-column:2}
+ body.pg .jrow{grid-template-columns:1fr}body.pg .jrow .tt,body.pg .jrow .tag,body.pg .jrow .sub{grid-column:1}
+ body.pg .news{grid-template-columns:68px 1fr;gap:12px}body.pg .news .th{width:68px;height:68px}body.pg .news .tag{display:none}
+ body.pg .grp-h h3{font-size:20px}
+ .visual{margin:0!important}
+ .visual-footer strong{white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
+ .visual-footer>.micro:last-child{display:none}
+ .visual .tabs{left:14px!important;right:14px!important;top:14px!important;flex-wrap:wrap;gap:8px 14px!important;overflow:visible!important}
+ .visual .tab{font-size:12px!important}
+ .visual .stat{top:auto!important;bottom:84px;right:14px!important}
+ .visual-footer{left:14px!important;right:14px!important;bottom:16px!important}.visual-footer strong{font-size:22px!important}
+ .nlabel .nm{font-size:11px}.nlabel.pi .nm{font-size:14px}.nlabel .rl{display:none}
+ .bottom{flex-direction:column;gap:4px}
+}
+</style><style id="nav-mobile-fix">
 @media(max-width:900px){.top nav{display:flex!important;gap:16px;font-size:12px}.top nav a{white-space:nowrap}}
 @media(max-width:700px){.top{height:auto;display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:15px 0 8px}.top nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:0!important;border-top:1px solid var(--rule);font-size:12px}.top nav a{display:flex;align-items:center;min-height:44px;border-bottom:1px solid var(--rule);padding:0 2px;white-space:nowrap}}
 @media(max-width:340px){.top nav{font-size:11px}}
@@ -204,13 +227,13 @@ const COL={ink:[42,31,74],teal:[75,59,143],blue:[143,132,196],pink:[217,135,168]
 let sel=null,hov=null;
 // left lists
 function row(p,i){const b=document.createElement('button');b.className='proj person';b.dataset.id=p.id;b.setAttribute('aria-pressed','false');
- b.innerHTML=`<span class="pn">${String(i).padStart(2,'0')}</span><span class="pt">${p.name}${p.en?`<b>${p.en}</b>`:''}</span><span class="ps">${p.pi?'교수 · 강원대학교 의과대학':p.role}</span><span class="pm">${{choi:'Gene',kjm:'RNA',lsh:'LD block',pej:'LD block',lsj:'Variant'}[p.id]} · ${p.role}</span>`;
+ b.innerHTML=`<span class="pn">${String(i).padStart(2,'0')}</span><span class="pt">${p.name}${p.en?`<b>${p.en}</b>`:''}</span><span class="ps">${p.pi?'교수 · 강원대학교 의과대학':({kjm:'RNA',lsh:'LD BLOCK',pej:'LD BLOCK',lsj:'VARIANT'}[p.id]||'')+' · '+p.role}</span><span class="pm">${{choi:'Gene',kjm:'RNA',lsh:'LD block',pej:'LD block',lsj:'Variant'}[p.id]} · ${p.role}</span>`;
  b.onclick=()=>select(sel===p.id?null:p.id);b.onmouseenter=()=>{hov=p.id};b.onmouseleave=()=>{hov=null};const li=document.createElement('li');li.appendChild(b);return li}
 let n=1;P.filter(p=>p.pi).forEach(p=>document.getElementById('pi-list').appendChild(row(p,n++)));
 P.filter(p=>!p.pi).forEach(p=>document.getElementById('mem-list').appendChild(row(p,n++)));
 document.querySelectorAll('.person').forEach((b,i)=>setTimeout(()=>b.classList.add('in'),250+i*110));
 function bio(p){const el=document.getElementById('bio');if(!p){el.innerHTML='';return}
- if(!p.pi){el.innerHTML=`<div class="micro">${p.role}</div><dl><dt>NAME</dt><dd>${p.name}</dd><dt>ROLE</dt><dd>${p.kr}</dd></dl>`;return}
+ if(!p.pi){el.innerHTML=`<div class="micro">${p.role}</div><dl><dt>NAME</dt><dd>${p.name}</dd><dt>ROLE</dt><dd>${p.kr} · ${p.role}</dd><dt>IN THE LOCUS</dt><dd>${{kjm:'RNA — 유전자에서 전사된 메시지',lsh:'LD block — 함께 움직이는 변이의 묶음',pej:'LD block — 함께 움직이는 변이의 묶음',lsj:'Variant — 모든 신호의 출발점'}[p.id]}</dd><dt>LAB</dt><dd>GnOmics · 강원대학교 의과대학</dd></dl>`;return}
  el.innerHTML=`<div class="micro">${p.role} · ${p.en}</div><dl><div class="sec">Education</div>${p.edu.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('')}<div class="sec">Career</div>${p.car.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('')}<dt>EMAIL</dt><dd>${p.mail}</dd></dl>`}
 function select(id){sel=id;document.querySelectorAll('.person').forEach(b=>b.setAttribute('aria-pressed',b.dataset.id===id?'true':'false'));
  const p=P.find(q=>q.id===id);bio(p);document.getElementById('viz-title').textContent=p?(p.en||p.name):'One locus, one lab.';
@@ -277,7 +300,7 @@ function frame(now){const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,D
  // transcription link gene -> RNA
  {const lit=sel&&F.has('choi')&&F.has('kjm'),b=g.kjm,pr=ez(intro(2.2));if(pr>0){ctx.strokeStyle=lit?rgba(COL.sig,.7):rgba(COL.teal,sel?.1:.3);ctx.lineWidth=lit?1.3:.9;ctx.setLineDash(lit?[]:[3,4]);ctx.beginPath();const x1=g.choi.x+g.choi.w*.86,y1=g.ay+4,y2=b.y-2;ctx.moveTo(x1,y1);ctx.lineTo(x1,y1-(y1-y2)*pr);ctx.stroke();ctx.setLineDash([]);
   if(lit){const u=(t*.5)%1;ctx.fillStyle=rgba(COL.sig,.95);ctx.beginPath();ctx.arc(x1,y1-(y1-y2)*u,2.6,0,7);ctx.fill()}
-  ctx.fillStyle=rgba(COL.blue,.9);ctx.font='9px ui-monospace,Menlo,monospace';ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText('transcription',x1+8,(y1+y2)/2)}}
+  ctx.fillStyle=rgba(COL.blue,.9);ctx.font='9px ui-monospace,Menlo,monospace';ctx.textAlign='left';ctx.textBaseline='middle';if(W>600)ctx.fillText('transcription',x1+8,(y1+y2)/2)}}
  // RNA (assistant)
  {const b=g.kjm,p=K('kjm'),d=dim('kjm'),pr=ez(intro(2.6));if(pr>0){const c=mix(COL.pink,COL.sig,p.k*.9),cy=b.y+b.h/2,len=b.w*pr;
   ctx.fillStyle=rgba(COL.ink,.75*d);ctx.beginPath();ctx.arc(b.x,cy,4.5,0,7);ctx.fill();
