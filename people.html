@@ -194,6 +194,37 @@ body.pg .hero{grid-template-columns:minmax(300px,34%) minmax(0,1fr)!important}
 @media(max-width:900px){.top nav{display:flex!important;gap:16px;font-size:12px}.top nav a{white-space:nowrap}}
 @media(max-width:700px){.top{height:auto;display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:15px 0 8px}.top nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:0!important;border-top:1px solid var(--rule);font-size:12px}.top nav a{display:flex;align-items:center;min-height:44px;border-bottom:1px solid var(--rule);padding:0 2px;white-space:nowrap}}
 @media(max-width:340px){.top nav{font-size:11px}}
+</style><style id="stories-style">
+/* A warm scrapbook hidden inside the People page, not a new public tab. */
+.story-entry[hidden],.story-gallery[hidden],.story-empty[hidden]{display:none!important}
+.story-entry{width:calc(100% - 8px);min-height:76px;margin:21px 4px 4px;padding:13px 16px;display:flex;align-items:center;gap:14px;text-align:left;color:#573d30;background:#f5e6cf;border:1px solid #ddc4a4;box-shadow:0 5px 18px rgba(100,62,36,.09);transform:rotate(-1deg);transition:transform .25s,box-shadow .25s}
+.story-entry:hover,.story-entry:focus-visible{transform:rotate(0deg) translateY(-2px);box-shadow:0 9px 20px rgba(100,62,36,.16)}
+.story-entry:focus-visible,.story-close:focus-visible,.story-pick:focus-visible{outline:2px solid #9a563e;outline-offset:3px}
+.story-entry-icon{width:39px;height:42px;flex:none;border:3px solid #fffaf0;background:#e2d1b6;box-shadow:0 2px 8px #6a48302e;display:grid;place-items:center;font-family:Georgia,serif;font-size:22px;color:#9c614a;transform:rotate(7deg)}
+.story-entry-copy{min-width:0;display:flex;flex-direction:column;gap:3px}.story-entry-copy small{font:9px ui-monospace,Menlo,monospace;letter-spacing:.14em;color:#a16f55}.story-entry-copy strong{font-family:"AppleMyungjo","Nanum Myeongjo",Georgia,serif;font-size:18px;font-weight:500;letter-spacing:-.035em}.story-entry-arrow{margin-left:auto;font-size:18px;color:#a16f55}
+.story-entry.is-found{animation:storyReveal .6s both}@keyframes storyReveal{from{opacity:0;transform:translateY(12px) rotate(-3deg)}to{opacity:1;transform:rotate(-1deg)}}
+body.story-open{overflow:hidden}
+.story-dialog{width:min(1120px,94vw);max-height:90dvh;padding:0;border:0;border-radius:3px;background:#f8efdf;color:#553e31;box-shadow:0 25px 100px #1c14206b;overflow:auto}
+.story-dialog::backdrop{background:rgba(35,26,33,.7);backdrop-filter:blur(5px)}
+.story-book{position:relative;min-height:590px;background:#f8efdf;background-image:radial-gradient(#b9946d1b .7px,transparent .7px),linear-gradient(100deg,#fff9ed,#f4e7d2);background-size:8px 8px,auto}
+.story-book:before{content:"";position:absolute;top:0;bottom:0;left:24px;width:1px;background:#cba98599;box-shadow:3px 0 6px #ae7d4b22;pointer-events:none}
+.story-top{height:70px;margin:0 46px 0 64px;border-bottom:1px solid #c4a88e88;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#8d6c58;font:10px ui-monospace,Menlo,monospace;letter-spacing:.14em}
+.story-close{min-width:44px;min-height:44px;border:1px solid #c6a98e;background:#fff7e9;color:#624534;font-size:23px;line-height:1;display:grid;place-items:center;cursor:pointer}
+.story-close:hover{background:#edd8bd}
+.story-spread{display:grid;grid-template-columns:minmax(260px,.83fr) minmax(0,1.17fr);gap:clamp(25px,4.6vw,65px);padding:70px clamp(42px,6vw,90px) 70px clamp(68px,7vw,100px);align-items:center}
+.story-kicker{font:10px ui-monospace,Menlo,monospace;letter-spacing:.2em;color:#ab795f;text-transform:uppercase}.story-title{font-family:"AppleMyungjo","Nanum Myeongjo",Georgia,serif;font-size:clamp(42px,4.2vw,62px);line-height:1.15;letter-spacing:-.075em;color:#523729;font-weight:400;margin:18px 0 26px}.story-title em{font-style:normal;color:#af674c;white-space:nowrap}
+.story-lead{font-size:15px;line-height:1.9;color:#6d5648;max-width:310px;word-break:keep-all}.story-rule{width:44px;height:1px;background:#ad785a;margin:27px 0 17px}.story-sign{font-family:"AppleMyungjo","Nanum Myeongjo",Georgia,serif;font-size:13px;color:#9d7358;letter-spacing:.04em}
+.story-stage{min-width:0;display:grid;place-items:center}.story-empty{width:min(100%,480px);text-align:center}.story-frame{width:min(100%,420px);aspect-ratio:1.18;margin:0 auto;padding:15px 15px 50px;background:#fffaf2;box-shadow:0 14px 34px #60422c38,0 2px 3px #60422c16;transform:rotate(3deg);position:relative}
+.story-frame:before{content:"";position:absolute;top:-15px;left:38%;width:99px;height:28px;transform:rotate(-8deg);background:#d9b9829c;clip-path:polygon(3% 3%,100% 0,97% 100%,0 95%);z-index:1}
+.story-frame-inner{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:17px;background:#eadac3;color:#927660;border:1px solid #d6c1a6}.story-frame-inner svg{width:58px;height:58px;opacity:.58}.story-frame-inner span{font-family:"AppleMyungjo","Nanum Myeongjo",Georgia,serif;font-size:17px}
+.story-frame-note{position:absolute;left:0;bottom:17px;width:100%;font-family:"AppleMyungjo","Nanum Myeongjo",Georgia,serif;font-size:14px;color:#956c56}
+.story-empty-note{margin:29px auto 0;line-height:1.7;font-size:12px;color:#806959;word-break:keep-all;max-width:370px}
+.story-foot{padding:17px 47px 22px 65px;border-top:1px solid #c4a88e77;display:flex;justify-content:space-between;gap:16px;font:10px ui-monospace,Menlo,monospace;letter-spacing:.08em;color:#9f806a}
+.story-entry,.story-close,.story-pick,.story-controls button{-webkit-tap-highlight-color:transparent}
+.story-pick{min-height:44px;margin-top:17px;padding:10px 15px;border:1px solid #b78869;background:#fff8ed;color:#7c533f;font-size:12px;letter-spacing:.01em;cursor:pointer}.story-pick:hover{background:#f0deca}.story-local{font-size:10px;line-height:1.65;color:#997f6c;margin:9px 0 0;word-break:keep-all}
+.story-gallery{width:min(100%,480px);text-align:center}.story-frame-filled{transform:rotate(-2deg)}.story-frame-filled .stories-photo{display:block;width:100%;height:100%;object-fit:contain;background:#ead9bf}.story-controls{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:22px;font:11px ui-monospace,Menlo,monospace;color:#8b6751}.story-controls button{width:44px;height:44px;border:1px solid #c5a487;background:#fff8ed;color:#6c4634;font-size:20px;cursor:pointer}.story-controls button:hover{background:#ecd9c4}
+@media(max-width:700px){.story-entry{width:100%;margin:18px 0 8px}.story-dialog{width:calc(100vw - 16px);max-height:94dvh}.story-book{min-height:0}.story-book:before{left:14px}.story-top{height:64px;margin:0 18px 0 28px}.story-spread{display:flex;flex-direction:column;align-items:stretch;gap:30px;padding:35px 25px 42px 31px}.story-title{font-size:clamp(42px,12vw,62px);margin:14px 0 17px}.story-lead{font-size:14px;max-width:none}.story-rule{margin:16px 0 12px}.story-stage{width:100%}.story-frame{max-width:330px;padding:11px 11px 42px}.story-foot{padding:16px 20px 18px 30px;flex-direction:column;gap:5px}}
+@media(prefers-reduced-motion:reduce){.story-entry,.story-entry.is-found{animation:none;transition:none;transform:none}}
 </style></head>
 <body class="ppl"><div class="shell"><header class="top"><div class="brand" onclick="location.href='index.html'" style="cursor:pointer">Gn<i>O</i>mics<span style="font-weight:400">.</span></div><nav aria-label="페이지 탐색"><a href="index.html">Research</a><a href="projects.html">Projects</a><a href="people.html" class="on">People</a><a href="publications.html">Publications</a><a href="news.html">News</a><a href="join.html">Join us</a></nav></header>
 <main class="hero">
@@ -203,6 +234,7 @@ body.pg .hero{grid-template-columns:minmax(300px,34%) minmax(0,1fr)!important}
  
  <div class="group-h micro">Principal investigator</div><ol class="proj-list" id="pi-list"></ol>
  <div class="group-h micro">Members</div><ol class="proj-list" id="mem-list"></ol>
+ <button id="stories-entry" class="story-entry" type="button" hidden aria-haspopup="dialog" aria-controls="stories-dialog"><span class="story-entry-icon" aria-hidden="true">✳</span><span class="story-entry-copy"><small>우리만 아는 작은 문</small><strong>연구실 이야기</strong></span><span class="story-entry-arrow" aria-hidden="true">↗</span></button>
  
  
 </section>
@@ -212,6 +244,16 @@ body.pg .hero{grid-template-columns:minmax(300px,34%) minmax(0,1fr)!important}
  <div class="visual-footer"><div><div class="micro" id="viz-caption">VARIANT → LD BLOCK → GENE → RNA → PROTEIN</div><strong id="viz-title">One locus, one lab.</strong></div><div class="micro">FIG. 05 / LAB LOCUS</div></div>
 </section></main>
 <footer class="bottom"><span>Department of Medicine, Kangwon National University · 강원도 춘천시 강원대학길 1 의과대학 1호관 302호</span><span>GnOmics / People</span></footer></div>
+<dialog class="story-dialog" id="stories-dialog" aria-labelledby="story-title">
+ <div class="story-book">
+  <header class="story-top"><span>GnOmics · 함께 남겨 둘 이야기</span><button type="button" class="story-close" id="stories-close" aria-label="연구실 이야기 닫기">×</button></header>
+  <div class="story-spread">
+   <div class="story-intro"><div class="story-kicker">우리의 작은 사진첩</div><h2 class="story-title" id="story-title">연구실의<br><em>작은 이야기.</em></h2><p class="story-lead">바쁘게 지나간 날들 사이에, 오래 곁에 두고 싶은 장면을 한 장씩 모아둘 자리.</p><div class="story-rule"></div><div class="story-sign">GnOmics · 우리 다섯의 사진첩</div></div>
+   <div class="story-stage"><div class="story-empty" id="story-empty"><div class="story-frame"><div class="story-frame-inner"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="7" y="14" width="50" height="38" rx="2"/><circle cx="21" cy="27" r="4"/><path d="M8 46l16-14 11 9 8-7 13 11"/></svg><span>첫 사진을 기다리는 중</span></div><div class="story-frame-note">우리의 첫 페이지</div></div><p class="story-empty-note">아직 사진을 받지 않아 비워 두었어요. 함께 남긴 사진이 생기면 이 자리에 붙일게요.</p><button class="story-pick" type="button" data-story-pick>사진으로 미리 채워보기 ↗</button><p class="story-local">선택한 사진은 이 브라우저에서만 보이고 저장·전송되지 않아요.</p></div><div class="story-gallery" id="story-gallery" hidden><div class="story-frame story-frame-filled"><img class="stories-photo" id="story-photo" alt=""></div><div class="story-controls"><button id="story-prev" type="button" aria-label="이전 사진">←</button><span id="story-count" aria-live="polite">0 / 0</span><button id="story-next" type="button" aria-label="다음 사진">→</button></div><button class="story-pick" type="button" data-story-pick>다른 사진 고르기</button><p class="story-local">이 브라우저에서만 미리 볼 수 있어요. 저장·전송되지 않습니다.</p></div><input id="story-upload" type="file" accept="image/*" multiple hidden></div>
+  </div>
+  <footer class="story-foot"><span>우리의 기록 · GnOmics</span><span>사진 한 장씩, 천천히</span></footer>
+ </div>
+</dialog>
 <script>
 const P=[
  {id:'choi',name:'최재용',en:'Jaeyong Choi',role:'Principal investigator',kr:'교수',pi:1,x:.5,y:.2,
@@ -235,8 +277,36 @@ document.querySelectorAll('.person').forEach((b,i)=>setTimeout(()=>b.classList.a
 function bio(p){const el=document.getElementById('bio');if(!p){el.innerHTML='';return}
  if(!p.pi){el.innerHTML=`<div class="micro">${p.role}</div><dl><dt>NAME</dt><dd>${p.name}</dd><dt>ROLE</dt><dd>${p.kr} · ${p.role}</dd><dt>IN THE LOCUS</dt><dd>${{kjm:'RNA — 유전자에서 전사된 메시지',lsh:'LD block — 함께 움직이는 변이의 묶음',pej:'LD block — 함께 움직이는 변이의 묶음',lsj:'Variant — 모든 신호의 출발점'}[p.id]}</dd><dt>LAB</dt><dd>GnOmics · 강원대학교 의과대학</dd></dl>`;return}
  el.innerHTML=`<div class="micro">${p.role} · ${p.en}</div><dl><div class="sec">Education</div>${p.edu.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('')}<div class="sec">Career</div>${p.car.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('')}<dt>EMAIL</dt><dd>${p.mail}</dd></dl>`}
+const STORY_CODES=[['choi','kjm','lsh','pej','lsj','choi','kjm','pej','lsh','lsj'],['choi','kjm','pej','lsh','lsj','choi','kjm','lsh','pej','lsj']];
+let storyProgress=0,storyCandidates=STORY_CODES,storyUnlocked=false;
+const storyEntry=document.getElementById('stories-entry'),storyDialog=document.getElementById('stories-dialog');
+function storyTick(id){
+ if(storyUnlocked)return;
+ const next=storyCandidates.filter(code=>code[storyProgress]===id);
+ if(next.length){storyCandidates=next;storyProgress++}
+ else{storyCandidates=STORY_CODES.filter(code=>code[0]===id);storyProgress=storyCandidates.length?1:0}
+ if(storyProgress===10){
+  storyUnlocked=true;storyEntry.hidden=false;storyEntry.classList.add('is-found');
+  requestAnimationFrame(()=>storyEntry.focus());
+ }
+}
+storyEntry.addEventListener('click',()=>{storyDialog.showModal();document.body.classList.add('story-open');document.getElementById('stories-close').focus()});
+document.getElementById('stories-close').addEventListener('click',()=>storyDialog.close());
+storyDialog.addEventListener('close',()=>{document.body.classList.remove('story-open');storyEntry.focus({preventScroll:true})});
+storyDialog.addEventListener('click',e=>{if(e.target===storyDialog)storyDialog.close()});
+const storyUpload=document.getElementById('story-upload'),storyGallery=document.getElementById('story-gallery'),storyPhoto=document.getElementById('story-photo'),storyCount=document.getElementById('story-count');
+let storyURLs=[],storyIndex=0;
+function storyRender(){if(!storyURLs.length)return;storyPhoto.src=storyURLs[storyIndex];storyPhoto.alt=`내가 고른 사진 ${storyIndex+1}`;storyCount.textContent=`${storyIndex+1} / ${storyURLs.length}`}
+document.querySelectorAll('[data-story-pick]').forEach(b=>b.addEventListener('click',()=>storyUpload.click()));
+storyUpload.addEventListener('change',()=>{const images=Array.from(storyUpload.files||[]).filter(f=>f.type.startsWith('image/')).slice(0,20);if(!images.length)return;storyURLs.forEach(URL.revokeObjectURL);storyURLs=images.map(URL.createObjectURL);storyIndex=0;document.getElementById('story-empty').hidden=true;storyGallery.hidden=false;storyRender();storyUpload.value=''});
+document.getElementById('story-prev').addEventListener('click',()=>{if(!storyURLs.length)return;storyIndex=(storyIndex-1+storyURLs.length)%storyURLs.length;storyRender()});
+document.getElementById('story-next').addEventListener('click',()=>{if(!storyURLs.length)return;storyIndex=(storyIndex+1)%storyURLs.length;storyRender()});
+storyDialog.addEventListener('keydown',e=>{if(storyGallery.hidden)return;if(e.key==='ArrowLeft'){document.getElementById('story-prev').click();e.preventDefault()}else if(e.key==='ArrowRight'){document.getElementById('story-next').click();e.preventDefault()}});
+addEventListener('pagehide',()=>storyURLs.forEach(URL.revokeObjectURL));
+
+
 function select(id){sel=id;document.querySelectorAll('.person').forEach(b=>b.setAttribute('aria-pressed',b.dataset.id===id?'true':'false'));
- const p=P.find(q=>q.id===id);bio(p);document.getElementById('viz-title').textContent=p?(p.en||p.name):'One locus, one lab.';
+ const p=P.find(q=>q.id===id);bio(p);storyTick(id);document.getElementById('viz-title').textContent=p?(p.en||p.name):'One locus, one lab.';
  document.getElementById('viz-caption').textContent=p?(p.kr.toUpperCase()+' · '+p.role.toUpperCase()):'VARIANT → LD BLOCK → GENE → RNA → PROTEIN';
  P.forEach(q=>q.t0=performance.now())}
 bio(null);
@@ -344,26 +414,4 @@ function frame(now){const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,D
  P.forEach(p=>{const b=g[p.id];p.L.style.left=b.cx+'px';p.L.style.top=(p.id==='choi'?b.y-66:p.id==='lsj'?b.ly:p.id==='kjm'?b.ly:b.ly)+'px';p.L.classList.toggle('active',p.id===sel);p.L.classList.toggle('dim',!on(p.id))});
  requestAnimationFrame(frame)}
 requestAnimationFrame(frame);
-</script><style>
-.egg{position:absolute;z-index:7;left:30px;bottom:96px;width:86px;padding:7px 7px 12px;background:#fffaf1;box-shadow:0 10px 22px rgba(90,60,30,.25);transform:rotate(-6deg) scale(.4);opacity:0;pointer-events:none;transition:transform .7s cubic-bezier(.2,1.4,.4,1),opacity .4s;cursor:pointer;text-decoration:none}
-.egg.on{opacity:1;transform:rotate(-6deg) scale(1);pointer-events:auto}
-.egg:hover{transform:rotate(0) scale(1.08)}
-.egg i{display:block;aspect-ratio:1;background:linear-gradient(160deg,#f3dcc0,#d9a47f)}
-.egg b{display:block;font:400 15px "Nanum Pen Script","Apple SD Gothic Neo",cursive;color:#4a3428;text-align:center;margin-top:6px;line-height:1}
-.egg:before{content:"";position:absolute;top:-8px;left:50%;width:44px;height:14px;margin-left:-22px;background:rgba(240,214,160,.8);transform:rotate(4deg)}
-.egg-toast{position:absolute;z-index:7;left:130px;bottom:120px;font:400 22px "Nanum Pen Script","Apple SD Gothic Neo",cursive;color:#c8643c;opacity:0;transition:opacity .6s}
-.egg-toast.on{opacity:1}
-@media(max-width:700px){.egg{left:14px;bottom:70px;width:70px}.egg-toast{left:96px;bottom:90px;font-size:18px}}
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<script>
-(function(){const v=document.querySelector('.visual');if(!v||typeof select!=='function')return;
- const a=document.createElement('a');a.className='egg';a.href='story.html';a.setAttribute('aria-label','연구실 이야기');a.innerHTML='<i></i><b>우리 이야기</b>';v.appendChild(a);
- const t=document.createElement('div');t.className='egg-toast';t.textContent='찾았다! 우리 이야기 →';v.appendChild(t);
- const seq=[];const ok=s=>{if(s.length<10)return false;const x=s.slice(-10).map(e=>e.id);
-  const A=x[2],B=x[3];return x[0]==='choi'&&x[1]==='kjm'&&x[4]==='lsj'&&x[5]==='choi'&&x[6]==='kjm'&&x[9]==='lsj'&&((A==='lsh'&&B==='pej')||(A==='pej'&&B==='lsh'))&&x[7]===B&&x[8]===A&&(s[s.length-1].t-s[s.length-10].t)<60000};
- const show=()=>{a.classList.add('on');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),3500);sessionStorage.setItem('gn-egg','1')};
- if(sessionStorage.getItem('gn-egg'))a.classList.add('on');
- const orig=select;select=function(id){orig(id);if(id){seq.push({id,t:Date.now()});if(seq.length>20)seq.shift();if(ok(seq))show()}};
-})();
 </script></body></html>
