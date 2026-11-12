@@ -167,7 +167,7 @@ body.ppl .visual #bio{top:30px;right:30px;bottom:auto;left:auto}
 .proj[aria-pressed="true"] .pn,.flt button[aria-pressed="true"] .n{color:#d6336c}
 body.pg .hero{grid-template-columns:minmax(300px,34%) minmax(0,1fr)!important}
 @media (max-height:780px){body.ppl .visual #bio{transform:scale(.82);transform-origin:top right}}
-</style></head>
+</style><style>#focus-hint{display:none!important}</style></head>
 <body class="ppl"><div class="shell"><header class="top"><div class="brand" onclick="location.href='index.html'" style="cursor:pointer">Gn<i>O</i>mics<span style="font-weight:400">.</span></div><nav aria-label="페이지 탐색"><a href="index.html">Research</a><a href="projects.html">Projects</a><a href="people.html" class="on">People</a><a href="publications.html">Publications</a><a href="news.html">News</a></nav></header>
 <main class="hero">
 <section class="panel">
@@ -176,8 +176,8 @@ body.pg .hero{grid-template-columns:minmax(300px,34%) minmax(0,1fr)!important}
  
  <div class="group-h micro">Principal investigator</div><ol class="proj-list" id="pi-list"></ol>
  <div class="group-h micro">Members</div><ol class="proj-list" id="mem-list"></ol>
- <p class="panel-cue micro">이름이나 점을 선택하세요 ↗</p>
- <div class="join">함께할 대학원생을 찾습니다 — <a href="mailto:mesnger@kangwon.ac.kr">mesnger@kangwon.ac.kr</a></div>
+ 
+ 
 </section>
 <section class="visual" aria-label="연구실 구성원 시각화">
  <canvas id="pcanvas"></canvas><div class="bio" aria-live="polite" id="bio"></div><div id="plabels" aria-hidden="true"></div>
