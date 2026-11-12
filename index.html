@@ -126,7 +126,7 @@ body.pg .hero{grid-template-columns:minmax(300px,34%) minmax(0,1fr)!important}
 @media (max-height:780px){body.ppl .visual #bio{transform:scale(.82);transform-origin:top right}}
 </style><style>
 .proj{padding-top:8px!important;padding-bottom:8px!important}
-#detail-desc{margin-bottom:14px!important}
+#detail-desc{display:none!important}
 .point-label{background:rgba(255,253,254,.88);padding:2px 6px;border-radius:2px;text-shadow:none!important}
 </style>
 <script>
@@ -140,7 +140,7 @@ requestAnimationFrame(fix)}requestAnimationFrame(fix)})();
 </script><style>#overview h1{font-size:clamp(36px,3.9vw,64px)}.top nav a.on{color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px}</style></head><body><div class="shell"><header class="top"><div class="brand" onclick="location.href='index.html'" style="cursor:pointer">Gn<i>O</i>mics<span style="font-weight:400">.</span></div><nav aria-label="페이지 탐색"><a href="index.html" class="on">Research</a><a href="projects.html">Projects</a><a href="people.html">People</a><a href="publications.html">Publications</a><a href="news.html">News</a></nav></header>
 <main class="hero" id="research">
 <section class="panel">
- <div id="overview" class="view"><div class="eyebrow micro">GNOMICS LAB · RESEARCH</div><h1>Signals become<br><em>understanding.</em></h1><p class="lede">유전체의 신호에서 세포와 질병의 구조까지. 단일세포 멀티오믹스, DNA 시퀀싱, 연관 분석, 기능 검증의 네 갈래로 질문에 접근합니다.</p><p class="cue micro">분야명을 선택하세요 ↗</p></div>
+ <div id="overview" class="view"><div class="eyebrow micro">GNOMICS LAB · RESEARCH</div><h1>Signals become<br><em>understanding.</em></h1><p class="cue micro">분야명을 선택하세요 ↗</p></div>
  <div id="detail" class="view" hidden><button class="back micro" id="back">← All fields</button><div class="micro tagline" id="detail-tag"></div><h2 id="detail-title"></h2><p id="detail-desc"></p><ol id="proj-list" class="proj-list"></ol><div class="object-focus" aria-live="polite"><div class="micro" id="focus-count"></div><strong id="focus-name"></strong><p id="focus-hint"></p><div id="focus-links" class="focus-links"></div></div></div>
 </section>
 <section class="visual" aria-label="연구 개념 3차원 시각화">
