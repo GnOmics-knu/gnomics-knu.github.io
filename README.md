@@ -8,4 +8,4 @@
 - `publications.html` — 논문 (Google Scholar 기준, DOI 링크)
 - `news.html` — 학회·세미나 활동
 
-각 페이지는 외부 의존성 없는 단일 HTML 파일입니다. 그래픽의 점·피크는 개념 시각화이며 실제 데이터가 아닙니다.
+각 페이지는 외부 의존성 없는 단일 HTML 파일입니다.
