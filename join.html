@@ -209,7 +209,13 @@ body.pg .lede{margin-top:16px;font-size:14px;line-height:1.65}
 .proj[aria-pressed="true"] .pn,.flt button[aria-pressed="true"] .n{color:#d6336c}
 body.pg .hero{grid-template-columns:minmax(300px,34%) minmax(0,1fr)!important}
 @media (max-height:780px){body.ppl .visual #bio{transform:scale(.82);transform-origin:top right}}
-</style><style>#focus-hint{display:none!important}</style></head>
+</style><style>#focus-hint{display:none!important}</style><style id="nav-mobile-fix">
+@media(max-width:900px){.top nav{display:flex!important;gap:16px;font-size:12px}.top nav a{white-space:nowrap}}
+@media(max-width:700px){.top{height:auto;display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:15px 0 8px}.top nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:0!important;border-top:1px solid var(--rule);font-size:12px}.top nav a{display:flex;align-items:center;min-height:44px;border-bottom:1px solid var(--rule);padding:0 2px;white-space:nowrap}}
+@media(max-width:340px){.top nav{font-size:11px}}
+@media(max-width:700px){body.pg .hero{flex-direction:column;min-height:0!important;height:auto!important;overflow:visible}body.pg .panel{padding:26px 0 20px;overflow:visible;-webkit-mask-image:none;mask-image:none}body.pg .board{min-height:0;overflow:visible}body.pg .strip{display:none}body.pg .scroll{overflow:visible;padding:6px 0 32px}body.pg .steps{grid-template-columns:repeat(2,minmax(0,1fr))}body.pg .step{border-bottom:1px solid var(--rule);margin-right:0;padding:14px 10px 16px 0;min-width:0}body.pg .step:nth-child(2n){border-right:0;padding-left:10px}body.pg .step:nth-last-child(-n+2){border-bottom:0}}
+@media(max-width:360px){body.pg .steps{grid-template-columns:1fr}body.pg .step{border-right:0;margin-right:0;padding:12px 0}body.pg .step:nth-child(2n){padding-left:0}body.pg .step:nth-last-child(2){border-bottom:1px solid var(--rule)}}
+</style></head>
 <body class="ppl pg"><div class="shell"><header class="top"><div class="brand" onclick="location.href='index.html'" style="cursor:pointer">Gn<i>O</i>mics<span style="font-weight:400">.</span></div><nav aria-label="페이지 탐색"><a href="index.html">Research</a><a href="projects.html">Projects</a><a href="people.html">People</a><a href="publications.html">Publications</a><a href="news.html">News</a><a href="join.html" class="on">Join us</a></nav></header>
 <main class="hero"><section class="panel"><div class="eyebrow micro">GNOMICS LAB · JOIN US</div><h1>Come find<br><em>the next signal.</em></h1>
 
