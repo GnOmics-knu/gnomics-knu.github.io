@@ -410,20 +410,20 @@ function frame(now){const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,D
  {const b=g.lsj,p=K('lsj'),d=dim('lsj'),pr=ez(intro(2));if(pr>0){const x=b.cx,k=b.k||1,cc=mix(COL.teal,COL.sig,p.k),FS=14*Math.max(.82,k),y1=g.ay+Math.max(42,44*k),y2=y1+FS*1.6,MY='S T A T I S T I C S';
   ctx.strokeStyle=rgba(COL.ink,.55*d);ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(x,g.ay);ctx.lineTo(x,y1-FS*.75);ctx.stroke();
   ctx.textBaseline='middle';const cwid=FS*1.25;
-  [[y1,'G',MY,false],[y2,'A','G N O M I C S',true]].forEach(([yy,al,tx,gn])=>{ctx.globalAlpha=pr;
-   ctx.font=(gn?'600 ':'')+FS+'px ui-monospace,Menlo,monospace';ctx.textAlign='right';ctx.fillStyle=gn?rgba(cc,(.88+.12*p.k)*d):rgba(COL.ink,(.66+.3*p.k)*d);ctx.fillText(tx,x-cwid*.5-10,yy);
-   ctx.fillStyle=al==='A'?rgba(cc,.95*d):rgba(COL.blue,.38*d);ctx.fillRect(x-cwid/2,yy-FS*.62,cwid,FS*1.24);ctx.fillStyle=al==='A'?'rgba(255,253,254,'+d+')':rgba(COL.ink,.8*d);ctx.font='600 '+FS+'px ui-monospace,Menlo,monospace';ctx.textAlign='center';ctx.fillText(al,x,yy+.5);ctx.globalAlpha=1});
-  ctx.font=FS+'px ui-monospace,Menlo,monospace';const wl=ctx.measureText(MY).width,bl=x-cwid*.5-wl-22;
+  [[y1,'G','G N O M I C S',true],[y2,'A',MY,false]].forEach(([yy,al,tx,gn])=>{ctx.globalAlpha=pr;const F2=gn?FS:FS*.88;
+   ctx.font=(gn?'600 ':'')+F2+'px ui-monospace,Menlo,monospace';ctx.textAlign='right';ctx.fillStyle=gn?rgba(cc,(.88+.12*p.k)*d):rgba(COL.ink,(.66+.3*p.k)*d);ctx.fillText(tx,x-cwid*.5-10,yy);if(!gn){ctx.textAlign='left';ctx.fillStyle=rgba(COL.teal,(.55+.35*p.k)*d);ctx.fillText('G E N O M I C S',x+cwid*.5+10,yy)}
+   ctx.fillStyle=gn?rgba(cc,.95*d):rgba(COL.teal,(.5+.25*p.k)*d);ctx.fillRect(x-cwid/2*(F2/FS),yy-F2*.62,cwid*(F2/FS),F2*1.24);ctx.fillStyle='rgba(255,253,254,'+d+')';ctx.font='600 '+F2+'px ui-monospace,Menlo,monospace';ctx.textAlign='center';ctx.fillText(al,x,yy+.5);ctx.globalAlpha=1});
+  ctx.font=(FS*.88)+'px ui-monospace,Menlo,monospace';const wl1=ctx.measureText(MY).width;ctx.font='600 '+FS+'px ui-monospace,Menlo,monospace';const wl=Math.max(wl1,ctx.measureText('G N O M I C S').width),bl=x-cwid*.5-wl-22;
   ctx.strokeStyle=rgba(cc,(.3+.45*p.k)*d);ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(bl+5,y1-FS*.7);ctx.lineTo(bl,y1-FS*.7);ctx.lineTo(bl,y2+FS*.7);ctx.lineTo(bl+5,y2+FS*.7);ctx.stroke();
-  ctx.font='9px ui-monospace,Menlo,monospace';ctx.textAlign='left';ctx.fillStyle=rgba(COL.ink,.5*d);ctx.fillText('rs671 G / A',x+cwid*.5+16,y2+FS*1.15);
+  ctx.font='9px ui-monospace,Menlo,monospace';ctx.textAlign='left';ctx.fillStyle=rgba(COL.ink,.5*d);ctx.fillText('rs671 A / G',x+cwid*.5+FS*9.4+24,y2+FS*1.15);
   // 인턴 하플로타입 (충분히 떨어뜨림)
-  const D=['STATISTICS','FORESTRY','HUMANITIES','NURSING','VETERINARY'],fs=11.5*Math.max(.82,k),rh=fs*1.55,Y0=y2+FS*1.6+46*k,pr2=ez(intro(3.4)),iw=fs*1.15;
+  const D=['FORESTRY','HUMANITIES','NURSING','VETERINARY'],fs=11.5*Math.max(.82,k),rh=fs*1.55,Y0=y2+FS*1.6+46*k,pr2=ez(intro(3.4)),iw=fs*1.15;
   D.forEach((nm,i)=>{const q=Math.min(1,Math.max(0,pr2*1.5-i*.12));if(q<=0)return;const y=Y0+i*rh;ctx.globalAlpha=q;
    ctx.font=fs+'px ui-monospace,Menlo,monospace';ctx.textAlign='right';ctx.fillStyle=rgba(COL.ink,(.34+.3*p.k)*d);ctx.fillText(nm.split('').join(' '),x-iw*.5-9,y);
    ctx.textAlign='left';ctx.fillStyle=rgba(COL.teal,(.45+.4*p.k)*d);ctx.fillText('G E N O M I C S',x+iw*.5+9,y);
    ctx.fillStyle=rgba(COL.teal,(.5+.25*p.k)*d);ctx.fillRect(x-iw/2,y-fs*.6,iw,fs*1.2);ctx.fillStyle='rgba(255,253,254,'+d+')';ctx.textAlign='center';ctx.font='600 '+fs+'px ui-monospace,Menlo,monospace';ctx.fillText('A',x,y+.5);ctx.globalAlpha=1});
   if(pr2>.3){// 하플로타입 표기
-   ctx.font='9px ui-monospace,Menlo,monospace';ctx.textAlign='left';ctx.fillStyle=rgba(COL.blue,.85*d);ctx.fillText('HAPLOTYPES · 학부인턴',x+iw*.5+9+(()=>{ctx.font=fs+'px ui-monospace,Menlo,monospace';const w=ctx.measureText('G E N O M I C S').width;ctx.font='9px ui-monospace,Menlo,monospace';return w})()+18,Y0+rh*2);
+   ctx.font='9px ui-monospace,Menlo,monospace';ctx.textAlign='left';ctx.fillStyle=rgba(COL.blue,.85*d);ctx.fillText('HAPLOTYPES · 학부인턴',x+iw*.5+9+(()=>{ctx.font=fs+'px ui-monospace,Menlo,monospace';const w=ctx.measureText('G E N O M I C S').width;ctx.font='9px ui-monospace,Menlo,monospace';return w})()+18,Y0+rh*1.5);
    // 인턴 → 연구생: 아래에서 위로 이어지는 화살표
    const ya=Y0-fs*.9,yb=y2+FS*.8,ax=x;ctx.strokeStyle=rgba(cc,(.35+.4*p.k)*d);ctx.lineWidth=1.2;ctx.setLineDash([3,4]);ctx.lineDashOffset=-t*12;ctx.beginPath();ctx.moveTo(ax,ya);ctx.lineTo(ax,yb+6);ctx.stroke();ctx.setLineDash([]);ctx.lineDashOffset=0;
    ctx.beginPath();ctx.moveTo(ax-4,yb+11);ctx.lineTo(ax,yb+5);ctx.lineTo(ax+4,yb+11);ctx.stroke();
@@ -449,7 +449,7 @@ function frame(now){const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,D
   const all=Math.min(1,Math.max(0,(pr0-2.6)/1));if(all>0){ctx.globalAlpha=all;ctx.font='13px "Apple SD Gothic Neo",sans-serif';ctx.fillStyle=rgba(COL.ink,.9);ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText('GnOmics',pc[0],pc[1]+sc*1.9);
    ctx.font='9.5px ui-monospace,Menlo,monospace';ctx.fillStyle=rgba(COL.blue,1);ctx.fillText('PROTEIN · ALL OF US',pc[0],pc[1]+sc*1.9+18);ctx.globalAlpha=1}}}
  // labels
- P.forEach(p=>{const b=g[p.id];p.L.style.left=b.cx+'px';p.L.style.top=(p.id==='choi'?b.y-66:p.id==='lsj'?b.ly:p.id==='kjm'?b.ly:b.ly)+'px';if(p.id==='lsj'){p.L.style.left=(b.cx+(14*Math.max(.82,b.k||1))*.65+16)+'px';p.L.style.top=(g.ay+34*(b.k||1))+'px';p.L.style.transform='none';p.L.style.textAlign='left'}p.L.classList.toggle('active',p.id===sel);p.L.classList.toggle('dim',!on(p.id))});
+ P.forEach(p=>{const b=g[p.id];p.L.style.left=b.cx+'px';p.L.style.top=(p.id==='choi'?b.y-66:p.id==='lsj'?b.ly:p.id==='kjm'?b.ly:b.ly)+'px';if(p.id==='lsj'){p.L.style.left=(b.cx+(14*Math.max(.82,b.k||1))*(.63+9.4)+30)+'px';p.L.style.top=(g.ay+34*(b.k||1))+'px';p.L.style.transform='none';p.L.style.textAlign='left'}p.L.classList.toggle('active',p.id===sel);p.L.classList.toggle('dim',!on(p.id))});
  requestAnimationFrame(frame)}
 requestAnimationFrame(frame);
 </script></body></html>
