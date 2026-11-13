@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /story.html
 
 Sitemap: https://gnomics-knu.github.io/sitemap.xml
