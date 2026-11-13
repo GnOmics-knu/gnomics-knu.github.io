@@ -282,7 +282,7 @@ P.filter(p=>!p.pi).forEach(p=>document.getElementById('mem-list').appendChild(ro
 document.querySelectorAll('.person').forEach((b,i)=>setTimeout(()=>b.classList.add('in'),250+i*110));
 function bioPhoto(p){return p.pi?`<div class="bio-ph"><img src="prof-choi.jpg" alt="${p.name} 교수" width="96" height="96"></div>`:`<div class="bio-ph empty" aria-hidden="true"><span>${p.name.slice(-2)}</span></div>`}
 function bio(p){const el=document.getElementById('bio');if(!p){el.innerHTML='';return}
- if(!p.pi){el.innerHTML=bioPhoto(p)+`<div class="micro">${p.role}</div><dl><dt>NAME</dt><dd>${p.name}</dd><dt>ROLE</dt><dd>${p.kr} · ${p.role}</dd><dt>LAB</dt><dd>GnOmics · 강원대학교 의과대학</dd></dl>`;return}
+ if(!p.pi){el.innerHTML=bioPhoto(p)+`<div class="micro">${p.role}</div><dl><dt>NAME</dt><dd>${p.name}</dd><dt>ROLE</dt><dd>${p.kr} · ${p.role}</dd></dl>`;return}
  el.innerHTML=bioPhoto(p)+`<div class="micro">${p.role} · ${p.en}</div><dl><div class="sec">Education</div>${p.edu.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('')}<div class="sec">Career</div>${p.car.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('')}<dt>EMAIL</dt><dd>${p.mail}</dd></dl>`}
 const STORY_CODES=[['choi','kjm','lsh','pej','lsj','choi','kjm','pej','lsh','lsj'],['choi','kjm','pej','lsh','lsj','choi','kjm','lsh','pej','lsj']];
 let storyProgress=0,storyCandidates=STORY_CODES,storyUnlocked=false;
