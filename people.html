@@ -225,7 +225,17 @@ body.story-open{overflow:hidden}
 .story-gallery{width:min(100%,480px);text-align:center}.story-frame-filled{transform:rotate(-2deg)}.story-frame-filled .stories-photo{display:block;width:100%;height:100%;object-fit:contain;background:#ead9bf}.story-controls{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:22px;font:11px ui-monospace,Menlo,monospace;color:#8b6751}.story-controls button{width:44px;height:44px;border:1px solid #c5a487;background:#fff8ed;color:#6c4634;font-size:20px;cursor:pointer}.story-controls button:hover{background:#ecd9c4}
 @media(max-width:700px){.story-entry{width:100%;margin:18px 0 8px}.story-dialog{width:calc(100vw - 16px);max-height:94dvh}.story-book{min-height:0}.story-book:before{left:14px}.story-top{height:64px;margin:0 18px 0 28px}.story-spread{display:flex;flex-direction:column;align-items:stretch;gap:30px;padding:35px 25px 42px 31px}.story-title{font-size:clamp(42px,12vw,62px);margin:14px 0 17px}.story-lead{font-size:14px;max-width:none}.story-rule{margin:16px 0 12px}.story-stage{width:100%}.story-frame{max-width:330px;padding:11px 11px 42px}.story-foot{padding:16px 20px 18px 30px;flex-direction:column;gap:5px}}
 @media(prefers-reduced-motion:reduce){.story-entry,.story-entry.is-found{animation:none;transition:none;transform:none}}
-</style><style id="bio-photo">#bio,#bio .bio-link{pointer-events:auto}.bio-link{color:#4b3b8f;text-decoration:none;border-bottom:1px solid #cfc6e3}.bio-link:hover{color:#d6336c;border-color:#d6336c}
+</style><style id="bio-photo">body.ppl .visual #bio.wide{width:520px!important;top:20px!important;transform-origin:top right}
+#bio .bio-cols{clear:both;display:grid;grid-template-columns:.8fr 1.2fr;gap:0 22px}
+#bio .bio-cols dl{grid-template-columns:62px 1fr!important}
+#bio .bio-foot{display:flex;gap:18px;align-items:center;margin-top:8px;padding-top:7px;border-top:1px solid #efe8f1;font-size:11px;color:#4d4466}
+@media(max-width:1100px){body.ppl .visual #bio.wide{width:400px!important}#bio .bio-cols{grid-template-columns:1fr}}
+#bio>.bio-head{flex-direction:column;align-items:flex-start;justify-content:center;gap:3px}
+#bio .bio-en{font-family:Georgia,serif;font-size:15px;letter-spacing:-.01em;text-transform:none;color:#2a1f4a}
+body.ppl .visual #bio{width:310px!important}
+body.ppl .visual #bio dl{gap:2px 10px!important;font-size:11px!important;line-height:1.38!important;margin-top:8px!important}
+body.ppl .visual #bio .sec{margin-top:5px!important}
+#bio,#bio .bio-link{pointer-events:auto}.bio-link{color:#4b3b8f;text-decoration:none;border-bottom:1px solid #cfc6e3}.bio-link:hover{color:#d6336c;border-color:#d6336c}
 .bio-ph{float:left;width:68px;height:68px;margin:0 14px 6px 0;border-radius:2px;overflow:hidden;background:#efe8f1;box-shadow:0 0 0 1px #e4dcea}
 .bio-ph img{width:100%;height:100%;object-fit:cover;display:block}
 .bio-ph.empty{display:flex;align-items:center;justify-content:center}.bio-ph.empty span{font-family:Georgia,"AppleMyungjo",serif;font-size:20px;color:#8f84c4;letter-spacing:-.04em}
@@ -282,9 +292,13 @@ let n=1;P.filter(p=>p.pi).forEach(p=>document.getElementById('pi-list').appendCh
 P.filter(p=>!p.pi).forEach(p=>document.getElementById('mem-list').appendChild(row(p,n++)));
 document.querySelectorAll('.person').forEach((b,i)=>setTimeout(()=>b.classList.add('in'),250+i*110));
 function bioPhoto(p){return p.pi?`<div class="bio-ph"><img src="prof-choi.jpg" alt="${p.name} 교수" width="96" height="96"></div>`:`<div class="bio-ph empty" aria-hidden="true"><span>${p.name.slice(-2)}</span></div>`}
-function bio(p){const el=document.getElementById('bio');if(!p){el.innerHTML='';return}
+function fitBio(){const el=document.getElementById('bio');if(!el.classList.contains('wide')){el.style.transform='';return}el.style.transform='none';const b=el.getBoundingClientRect(),ls=[...document.querySelectorAll('.nlabel')].map(e=>e.getBoundingClientRect());let s=1;
+ ls.forEach(q=>{if(q.right<b.left-8||q.left>b.right)return;const sh=(q.top-10-b.top)/b.height;if(q.top>b.top&&sh<1)s=Math.min(s,Math.max(sh,(b.right-q.right-14)/b.width>.6?Math.min(1,(b.right-q.right-14)/b.width):sh))});
+ el.style.transform=s<1?`scale(${Math.max(.62,s).toFixed(3)})`:''}
+addEventListener('resize',()=>setTimeout(fitBio,60));
+function bio(p){const el=document.getElementById('bio');el.classList.toggle('wide',!!(p&&p.pi));setTimeout(fitBio,30);if(!p){el.innerHTML='';return}
  if(!p.pi){el.innerHTML=bioPhoto(p)+`<div class="micro">${p.role}</div><dl><dt>NAME</dt><dd>${p.name}</dd><dt>ROLE</dt><dd>${p.kr} · ${p.role}</dd></dl>`;return}
- el.innerHTML=bioPhoto(p)+`<div class="micro">${p.role} · ${p.en}</div><dl><div class="sec">Education</div>${p.edu.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('')}<div class="sec">Career</div>${p.car.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('')}<dt>EMAIL</dt><dd>${p.mail}</dd><dt>SCHOLAR</dt><dd><a class="bio-link" href="https://scholar.google.com/citations?user=B4tjqD8AAAAJ" target="_blank" rel="noopener">Google Scholar ↗</a></dd></dl>`}
+ el.innerHTML=bioPhoto(p)+`<div class="micro bio-head"><span>${p.role}</span><span class="bio-en">${p.en}</span></div><div class="bio-cols"><dl><div class="sec">Education</div>${p.edu.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('')}</dl><dl><div class="sec">Career</div>${p.car.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('')}</dl></div><div class="bio-foot"><span>${p.mail}</span><a class="bio-link" href="https://scholar.google.com/citations?user=B4tjqD8AAAAJ" target="_blank" rel="noopener">Google Scholar ↗</a></div>`}
 const STORY_CODES=[['choi','kjm','lsh','pej','lsj','choi','kjm','pej','lsh','lsj'],['choi','kjm','pej','lsh','lsj','choi','kjm','lsh','pej','lsj']];
 let storyProgress=0,storyCandidates=STORY_CODES,storyUnlocked=false;
 const storyEntry=document.getElementById('stories-entry'),storyDialog=document.getElementById('stories-dialog');
