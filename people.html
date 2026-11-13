@@ -353,8 +353,8 @@ function frame(now){const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,D
  // genomic axis
  const ia=ez(intro(0));ctx.strokeStyle=rgba(COL.ink,.35);ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(X(0),g.ay);ctx.lineTo(X(0)+(X(1)-X(0))*ia,g.ay);ctx.stroke();
  ctx.font='9px ui-monospace,Menlo,monospace';ctx.fillStyle=rgba(COL.blue,.9*ia);ctx.textAlign='center';ctx.textBaseline='top';
- for(let i=0;i<=10;i++){const x=X(i/10);ctx.strokeStyle=rgba(COL.ink,.25*ia);ctx.beginPath();ctx.moveTo(x,g.ay);ctx.lineTo(x,g.ay+4);ctx.stroke();if(i%2===0&&!(x>g.choi.x-30&&x<g.choi.x+g.choi.w+30)&&!(x>g.lsj.cx-40&&x<g.lsj.cx+40))ctx.fillText((120+i*25)+' kb',x,g.ay+7)}
- ctx.textAlign='left';ctx.textBaseline='top';ctx.fillText('chrG · GnOmics locus',X(0),g.ay+22);
+ for(let i=0;i<=10;i++){const x=X(i/10);ctx.strokeStyle=rgba(COL.ink,.25*ia);ctx.beginPath();ctx.moveTo(x,g.ay);ctx.lineTo(x,g.ay+4);ctx.stroke();if(i%2===0&&!(x>g.choi.x-30&&x<g.choi.x+g.choi.w+30)&&!(x>g.lsj.cx-40&&x<g.lsj.cx+40))0}
+ ctx.textAlign='left';ctx.textBaseline='top';
  // regulatory arcs (drawn first)
  const arc=(x1,x2,y,hgt,id1,id2,d)=>{const lit=sel&&F.has(id1)&&F.has(id2),p=ez(intro(d));if(p<=0)return;ctx.strokeStyle=lit?rgba(COL.sig,.7):rgba(COL.teal,sel?.1:.3);ctx.lineWidth=lit?1.3:.9;ctx.setLineDash(lit?[]:[3,4]);ctx.beginPath();
   const pts=[];for(let i=0;i<=48*p;i++){const u=i/48;pts.push([x1+(x2-x1)*u,y-Math.sin(Math.PI*u)*hgt])}pts.forEach((q,i)=>i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]));ctx.stroke();ctx.setLineDash([]);
@@ -377,12 +377,12 @@ function frame(now){const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,D
  // transcription link gene -> RNA
  {const lit=sel&&F.has('choi')&&F.has('kjm'),b=g.kjm,pr=ez(intro(2.2));if(pr>0){ctx.strokeStyle=lit?rgba(COL.sig,.7):rgba(COL.teal,sel?.1:.3);ctx.lineWidth=lit?1.3:.9;ctx.setLineDash(lit?[]:[3,4]);ctx.beginPath();const x1=g.choi.x+g.choi.w*.86,y1=g.ay+4,y2=b.y-2;ctx.moveTo(x1,y1);ctx.lineTo(x1,y1-(y1-y2)*pr);ctx.stroke();ctx.setLineDash([]);
   if(lit){const u=(t*.5)%1;ctx.fillStyle=rgba(COL.sig,.95);ctx.beginPath();ctx.arc(x1,y1-(y1-y2)*u,2.6,0,7);ctx.fill()}
-  ctx.fillStyle=rgba(COL.blue,.9);ctx.font='9px ui-monospace,Menlo,monospace';ctx.textAlign='left';ctx.textBaseline='middle';if(W>600)ctx.fillText('transcription',x1+8,(y1+y2)/2)}}
+  ctx.fillStyle=rgba(COL.blue,.9);ctx.font='9px ui-monospace,Menlo,monospace';ctx.textAlign='left';ctx.textBaseline='middle';0}}
  // RNA (assistant)
  {const b=g.kjm,p=K('kjm'),d=dim('kjm'),pr=ez(intro(2.6));if(pr>0){const c=mix(COL.pink,COL.sig,p.k*.9),cy=b.y+b.h/2,len=b.w*pr;
   ctx.fillStyle=rgba(COL.ink,.75*d);ctx.beginPath();ctx.arc(b.x,cy,4.5,0,7);ctx.fill();
   for(let s=0;s<len;s+=3.4){const x=b.x+8+s,y=cy+Math.sin(s*.06-t*2.2)*(7+3*p.h);ctx.fillStyle=rgba(c,(.6+.3*Math.sin(s*.3+t))*d);ctx.beginPath();ctx.arc(x,y,1.7+(p.k*.6),0,7);ctx.fill()}
-  if(pr>.98){ctx.font='10px ui-monospace,Menlo,monospace';ctx.fillStyle=rgba(c,.9*d);ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText('AAAAA',b.x+b.w+12,cy)}}}
+  if(pr>.98){ctx.font='10px ui-monospace,Menlo,monospace';ctx.fillStyle=rgba(c,.9*d);ctx.textAlign='left';ctx.textBaseline='middle';0}}}
  // LD blocks (grad students)
  ['lsh','pej'].forEach((id,bi)=>{const b=g[id],p=K(id),d=dim(id),L=LD[id],pr=intro(1+bi*.3),n=L.n,cw=b.w/n;
   L.cells.forEach(cl=>{const ord=(cl.j-cl.i)/n;if(ord>pr*1.05)return;const cx=b.x+(cl.i+cl.j)/2*cw,cy=g.ay-8-(cl.j-cl.i)*cw/2,s=cw*.36*(1+.06*p.h);
@@ -395,7 +395,7 @@ function frame(now){const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,D
   ctx.strokeStyle=rgba(COL.ink,.7*d);ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(x,g.ay);ctx.lineTo(x,top);ctx.stroke();
   const r=7+2*Math.sin(t*2.4)*(.4+p.k)+2*p.h;ctx.fillStyle=rgba(mix(COL.teal,COL.sig,p.k),.95*d);ctx.beginPath();ctx.arc(x,top,r,0,7);ctx.fill();
   ctx.strokeStyle=rgba(COL.sig,(.15+.35*p.k)*d);ctx.beginPath();ctx.arc(x,top,r+7+4*Math.sin(t*2),0,7);ctx.stroke();
-  ctx.font='9.5px ui-monospace,Menlo,monospace';ctx.fillStyle=rgba(COL.ink,.7*d);ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText('G > A',x,top+r+6);
+  ctx.font='9.5px ui-monospace,Menlo,monospace';ctx.fillStyle=rgba(COL.ink,.7*d);ctx.textAlign='center';ctx.textBaseline='top';
   const lit=sel&&F.has('lsj');if(lit){['lsh','pej'].forEach(id=>{if(!F.has(id))return;ctx.strokeStyle=rgba(COL.sig,.5);ctx.setLineDash([2,3]);ctx.beginPath();ctx.moveTo(x,g.ay);ctx.lineTo(g[id].cx,g.ay-8-g[id].h*.35);ctx.stroke();ctx.setLineDash([])})}}}
 
  // ---- protein: everyone folds into one product ----
@@ -416,7 +416,7 @@ function frame(now){const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,D
   pts.sort((a,b)=>a.z-b.z).forEach(p=>{const on=!sel||p.d.id===sel;let c=segc[p.d.id];if(sel&&p.d.id===sel)c=COL.sig;const depth=.55+.45*(p.z+1.2)/2.4;
    ctx.fillStyle=rgba(c,(p.k<1?.75:.85*depth)*(on?1:.3));ctx.beginPath();ctx.arc(p.x,p.y,(1.6+1.6*depth)*(sel&&p.d.id===sel?1.25:1),0,7);ctx.fill()});
   const all=Math.min(1,Math.max(0,(pr0-2.6)/1));if(all>0){ctx.globalAlpha=all;ctx.font='13px "Apple SD Gothic Neo",sans-serif';ctx.fillStyle=rgba(COL.ink,.9);ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText('GnOmics',pc[0],pc[1]+sc*1.9);
-   ctx.font='9.5px ui-monospace,Menlo,monospace';ctx.fillStyle=rgba(COL.blue,1);ctx.fillText('PROTEIN · ALL OF US',pc[0],pc[1]+sc*1.9+18);ctx.globalAlpha=1}}}
+   ctx.font='9.5px ui-monospace,Menlo,monospace';ctx.fillStyle=rgba(COL.blue,1);ctx.globalAlpha=1}}}
  // labels
  P.forEach(p=>{const b=g[p.id];p.L.style.left=b.cx+'px';p.L.style.top=(p.id==='choi'?b.y-66:p.id==='lsj'?b.ly:p.id==='kjm'?b.ly:b.ly)+'px';p.L.classList.toggle('active',p.id===sel);p.L.classList.toggle('dim',!on(p.id))});
  requestAnimationFrame(frame)}
