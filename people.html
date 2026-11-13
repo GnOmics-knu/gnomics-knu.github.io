@@ -410,7 +410,7 @@ function frame(now){const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,D
   ctx.strokeStyle=rgba(COL.ink,.7*d);ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(x,g.ay);ctx.lineTo(x,top);ctx.stroke();
   const r=7+2*Math.sin(t*2.4)*(.4+p.k)+2*p.h;ctx.fillStyle=rgba(mix(COL.teal,COL.sig,p.k),.95*d);ctx.beginPath();ctx.arc(x,top,r,0,7);ctx.fill();
   ctx.strokeStyle=rgba(COL.sig,(.15+.35*p.k)*d);ctx.beginPath();ctx.arc(x,top,r+7+4*Math.sin(t*2),0,7);ctx.stroke();
-  ctx.font='9.5px ui-monospace,Menlo,monospace';ctx.fillStyle=rgba(COL.ink,.7*d);ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText('G > A',x,top+r+6);
+  ctx.font='9.5px ui-monospace,Menlo,monospace';ctx.fillStyle=rgba(COL.ink,.7*d);ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText('A > T',x,top+r+6);
   const lit=sel&&F.has('lsj');if(lit){['lsh','pej'].forEach(id=>{if(!F.has(id))return;ctx.strokeStyle=rgba(COL.sig,.5);ctx.setLineDash([2,3]);ctx.beginPath();ctx.moveTo(x,g.ay);ctx.lineTo(g[id].cx,g.ay-8-g[id].h*.35);ctx.stroke();ctx.setLineDash([])})}}}
 
  // ---- protein: everyone folds into one product ----
