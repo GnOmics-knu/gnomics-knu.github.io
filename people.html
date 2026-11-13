@@ -247,7 +247,7 @@ body.ppl .visual #bio{background:rgba(255,253,254,.95)!important;padding:12px 14
 <section class="visual" aria-label="연구실 구성원 시각화">
  <canvas id="pcanvas"></canvas><div class="bio" aria-live="polite" id="bio"></div><div id="plabels" aria-hidden="true"></div>
  
- <div class="visual-footer"><div><div class="micro" id="viz-caption">FIVE PEOPLE · ONE LAB</div><strong id="viz-title">One locus, one lab.</strong></div><div class="micro">FIG. 05 / LAB LOCUS</div></div>
+ <div class="visual-footer"><div><div class="micro" id="viz-caption"></div><strong id="viz-title">One locus, one lab.</strong></div><div class="micro">FIG. 05 / LAB LOCUS</div></div>
 </section></main>
 <footer class="bottom"><span>Department of Medicine, Kangwon National University · 강원도 춘천시 강원대학길 1 의과대학 1호관 302호</span><span>GnOmics / People</span></footer></div>
 <dialog class="story-dialog" id="stories-dialog" aria-labelledby="story-title">
@@ -314,7 +314,7 @@ addEventListener('pagehide',()=>storyURLs.forEach(URL.revokeObjectURL));
 
 function select(id){sel=id;document.querySelectorAll('.person').forEach(b=>b.setAttribute('aria-pressed',b.dataset.id===id?'true':'false'));
  const p=P.find(q=>q.id===id);bio(p);storyTick(id);document.getElementById('viz-title').textContent=p?(p.en||p.name):'One locus, one lab.';
- document.getElementById('viz-caption').textContent=p?(p.kr.toUpperCase()+' · '+p.role.toUpperCase()):'FIVE PEOPLE · ONE LAB';
+ document.getElementById('viz-caption').textContent=p?(p.kr.toUpperCase()+' · '+p.role.toUpperCase()):'';
  P.forEach(q=>q.t0=performance.now())}
 bio(null);
 // canvas — genome locus metaphor
