@@ -417,7 +417,7 @@ function frame(now){const t=now/1000,el=(now-T0)/1000;ctx.setTransform(DPR,0,0,D
    ctx.fillStyle=gn?rgba(cc,.95*d):rgba(COL.teal,(.5+.25*p.k)*d);ctx.fillRect(x-cwid/2*(F2/FS),yy-F2*.62,cwid*(F2/FS),F2*1.24);ctx.fillStyle='rgba(255,253,254,'+d+')';ctx.font='600 '+F2+'px ui-monospace,Menlo,monospace';ctx.textAlign='center';ctx.fillText(al,x,yy+.5);ctx.globalAlpha=1});
   ctx.font=(FS*.88)+'px ui-monospace,Menlo,monospace';const wl1=ctx.measureText(MY).width;ctx.font='600 '+FS+'px ui-monospace,Menlo,monospace';const wl=Math.max(wl1,ctx.measureText('G N O M I C S').width),bl=x-cwid*.5-wl-22;
   ctx.strokeStyle=rgba(cc,(.3+.45*p.k)*d);ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(bl+5,y1-FS*.7);ctx.lineTo(bl,y1-FS*.7);ctx.lineTo(bl,y2+FS*.7);ctx.lineTo(bl+5,y2+FS*.7);ctx.stroke();
-  ctx.font='10px ui-monospace,Menlo,monospace';ctx.textAlign='left';ctx.fillStyle=rgba(COL.ink,.5*d);ctx.fillText('rs671 A / G',x+cwid*.5+10+wGb+14,y2);
+  ctx.font='10px ui-monospace,Menlo,monospace';ctx.textAlign='left';ctx.fillStyle=rgba(COL.ink,.5*d);ctx.fillText('G / A',x+cwid*.5+10+wGb+14,y2);
   // 인턴 하플로타입 (충분히 떨어뜨림)
   const D=['VETERINARY','NURSING','STATISTICS','SCIENCE EDU','BIOMED TECH','BIOENGINEERING','FORESTRY'],fs=11.5*Math.max(.82,k),rh=fs*1.55,Y0=y2+FS*1.6+46*k,pr2=ez(intro(3.4)),iw=fs*1.15;
   D.forEach((nm,i)=>{const q=Math.min(1,Math.max(0,pr2*1.5-i*.12));if(q<=0)return;const y=Y0+i*rh;ctx.globalAlpha=q;
