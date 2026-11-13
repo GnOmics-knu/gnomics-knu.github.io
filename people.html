@@ -225,7 +225,13 @@ body.story-open{overflow:hidden}
 .story-gallery{width:min(100%,480px);text-align:center}.story-frame-filled{transform:rotate(-2deg)}.story-frame-filled .stories-photo{display:block;width:100%;height:100%;object-fit:contain;background:#ead9bf}.story-controls{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:22px;font:11px ui-monospace,Menlo,monospace;color:#8b6751}.story-controls button{width:44px;height:44px;border:1px solid #c5a487;background:#fff8ed;color:#6c4634;font-size:20px;cursor:pointer}.story-controls button:hover{background:#ecd9c4}
 @media(max-width:700px){.story-entry{width:100%;margin:18px 0 8px}.story-dialog{width:calc(100vw - 16px);max-height:94dvh}.story-book{min-height:0}.story-book:before{left:14px}.story-top{height:64px;margin:0 18px 0 28px}.story-spread{display:flex;flex-direction:column;align-items:stretch;gap:30px;padding:35px 25px 42px 31px}.story-title{font-size:clamp(42px,12vw,62px);margin:14px 0 17px}.story-lead{font-size:14px;max-width:none}.story-rule{margin:16px 0 12px}.story-stage{width:100%}.story-frame{max-width:330px;padding:11px 11px 42px}.story-foot{padding:16px 20px 18px 30px;flex-direction:column;gap:5px}}
 @media(prefers-reduced-motion:reduce){.story-entry,.story-entry.is-found{animation:none;transition:none;transform:none}}
-</style></head>
+</style><style id="bio-photo">.bio-ph{float:left;width:68px;height:68px;margin:0 14px 6px 0;border-radius:2px;overflow:hidden;background:#efe8f1;box-shadow:0 0 0 1px #e4dcea}
+.bio-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.bio-ph.empty{display:flex;align-items:center;justify-content:center}.bio-ph.empty span{font-family:Georgia,"AppleMyungjo",serif;font-size:20px;color:#8f84c4;letter-spacing:-.04em}
+#bio>.micro{min-height:68px;display:flex;align-items:center;margin:0}
+#bio dl{clear:both}
+body.ppl .visual #bio{background:rgba(255,253,254,.95)!important;padding:12px 14px!important;box-shadow:0 0 0 1px #efe8f1}
+@media(max-width:700px){.bio-ph{width:56px;height:56px}#bio>.micro{min-height:56px}}</style></head>
 <body class="ppl"><div class="shell"><header class="top"><div class="brand" onclick="location.href='index.html'" style="cursor:pointer">Gn<i>O</i>mics<span style="font-weight:400">.</span></div><nav aria-label="페이지 탐색"><a href="index.html">Research</a><a href="projects.html">Projects</a><a href="people.html" class="on">People</a><a href="publications.html">Publications</a><a href="news.html">News</a><a href="join.html">Join us</a></nav></header>
 <main class="hero">
 <section class="panel">
@@ -241,7 +247,7 @@ body.story-open{overflow:hidden}
 <section class="visual" aria-label="연구실 구성원 시각화">
  <canvas id="pcanvas"></canvas><div class="bio" aria-live="polite" id="bio"></div><div id="plabels" aria-hidden="true"></div>
  
- <div class="visual-footer"><div><div class="micro" id="viz-caption">VARIANT → LD BLOCK → GENE → RNA → PROTEIN</div><strong id="viz-title">One locus, one lab.</strong></div><div class="micro">FIG. 05 / LAB LOCUS</div></div>
+ <div class="visual-footer"><div><div class="micro" id="viz-caption">FIVE PEOPLE · ONE LAB</div><strong id="viz-title">One locus, one lab.</strong></div><div class="micro">FIG. 05 / LAB LOCUS</div></div>
 </section></main>
 <footer class="bottom"><span>Department of Medicine, Kangwon National University · 강원도 춘천시 강원대학길 1 의과대학 1호관 302호</span><span>GnOmics / People</span></footer></div>
 <dialog class="story-dialog" id="stories-dialog" aria-labelledby="story-title">
@@ -260,8 +266,8 @@ const P=[
   edu:[['2016–2023','서울대학교 의과대학 박사'],['2006–2012','한림대학교 의과대학 학사']],
   car:[['2025–현재','강원대학교 의과대학 조교수'],['2023–2025','서울대학교 의과대학 연구조교수'],['2015–2016','한림춘천성심병원 전공의'],['2012–2015','신안군·홍천군 보건소 공중보건의사']],mail:'mesnger@kangwon.ac.kr'},
  {id:'kjm',name:'김정미',role:'Lab manager',kr:'조교',x:.78,y:.26,par:['choi']},
- {id:'lsh',name:'이수현',role:'M.S. student',kr:'석사과정',x:.34,y:.56,par:['choi']},
- {id:'pej',name:'박은지',role:'M.S. student',kr:'석사과정',x:.62,y:.56,par:['choi']},
+ {id:'lsh',name:'이수현',role:'Graduate student',kr:'대학원생',x:.34,y:.56,par:['choi']},
+ {id:'pej',name:'박은지',role:'Graduate student',kr:'대학원생',x:.62,y:.56,par:['choi']},
  {id:'lsj',name:'이상준',role:'Undergraduate researcher',kr:'학부연구생',x:.48,y:.84,par:['lsh','pej']},
 ];
 
@@ -269,14 +275,15 @@ const COL={ink:[42,31,74],teal:[75,59,143],blue:[143,132,196],pink:[217,135,168]
 let sel=null,hov=null;
 // left lists
 function row(p,i){const b=document.createElement('button');b.className='proj person';b.dataset.id=p.id;b.setAttribute('aria-pressed','false');
- b.innerHTML=`<span class="pn">${String(i).padStart(2,'0')}</span><span class="pt">${p.name}${p.en?`<b>${p.en}</b>`:''}</span><span class="ps">${p.pi?'교수 · 강원대학교 의과대학':({kjm:'RNA',lsh:'LD BLOCK',pej:'LD BLOCK',lsj:'VARIANT'}[p.id]||'')+' · '+p.role}</span><span class="pm">${{choi:'Gene',kjm:'RNA',lsh:'LD block',pej:'LD block',lsj:'Variant'}[p.id]} · ${p.role}</span>`;
+ b.innerHTML=`<span class="pn">${String(i).padStart(2,'0')}</span><span class="pt">${p.name}${p.en?`<b>${p.en}</b>`:''}</span><span class="ps">${p.pi?'교수 · 강원대학교 의과대학':p.kr+' · '+p.role}</span>`;
  b.onclick=()=>select(sel===p.id?null:p.id);b.onmouseenter=()=>{hov=p.id};b.onmouseleave=()=>{hov=null};const li=document.createElement('li');li.appendChild(b);return li}
 let n=1;P.filter(p=>p.pi).forEach(p=>document.getElementById('pi-list').appendChild(row(p,n++)));
 P.filter(p=>!p.pi).forEach(p=>document.getElementById('mem-list').appendChild(row(p,n++)));
 document.querySelectorAll('.person').forEach((b,i)=>setTimeout(()=>b.classList.add('in'),250+i*110));
+function bioPhoto(p){return p.pi?`<div class="bio-ph"><img src="prof-choi.jpg" alt="${p.name} 교수" width="96" height="96"></div>`:`<div class="bio-ph empty" aria-hidden="true"><span>${p.name.slice(-2)}</span></div>`}
 function bio(p){const el=document.getElementById('bio');if(!p){el.innerHTML='';return}
- if(!p.pi){el.innerHTML=`<div class="micro">${p.role}</div><dl><dt>NAME</dt><dd>${p.name}</dd><dt>ROLE</dt><dd>${p.kr} · ${p.role}</dd><dt>IN THE LOCUS</dt><dd>${{kjm:'RNA — 유전자에서 전사된 메시지',lsh:'LD block — 함께 움직이는 변이의 묶음',pej:'LD block — 함께 움직이는 변이의 묶음',lsj:'Variant — 모든 신호의 출발점'}[p.id]}</dd><dt>LAB</dt><dd>GnOmics · 강원대학교 의과대학</dd></dl>`;return}
- el.innerHTML=`<div class="micro">${p.role} · ${p.en}</div><dl><div class="sec">Education</div>${p.edu.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('')}<div class="sec">Career</div>${p.car.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('')}<dt>EMAIL</dt><dd>${p.mail}</dd></dl>`}
+ if(!p.pi){el.innerHTML=bioPhoto(p)+`<div class="micro">${p.role}</div><dl><dt>NAME</dt><dd>${p.name}</dd><dt>ROLE</dt><dd>${p.kr} · ${p.role}</dd><dt>LAB</dt><dd>GnOmics · 강원대학교 의과대학</dd></dl>`;return}
+ el.innerHTML=bioPhoto(p)+`<div class="micro">${p.role} · ${p.en}</div><dl><div class="sec">Education</div>${p.edu.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('')}<div class="sec">Career</div>${p.car.map(e=>`<dt>${e[0]}</dt><dd>${e[1]}</dd>`).join('')}<dt>EMAIL</dt><dd>${p.mail}</dd></dl>`}
 const STORY_CODES=[['choi','kjm','lsh','pej','lsj','choi','kjm','pej','lsh','lsj'],['choi','kjm','pej','lsh','lsj','choi','kjm','lsh','pej','lsj']];
 let storyProgress=0,storyCandidates=STORY_CODES,storyUnlocked=false;
 const storyEntry=document.getElementById('stories-entry'),storyDialog=document.getElementById('stories-dialog');
@@ -307,7 +314,7 @@ addEventListener('pagehide',()=>storyURLs.forEach(URL.revokeObjectURL));
 
 function select(id){sel=id;document.querySelectorAll('.person').forEach(b=>b.setAttribute('aria-pressed',b.dataset.id===id?'true':'false'));
  const p=P.find(q=>q.id===id);bio(p);storyTick(id);document.getElementById('viz-title').textContent=p?(p.en||p.name):'One locus, one lab.';
- document.getElementById('viz-caption').textContent=p?(p.kr.toUpperCase()+' · '+p.role.toUpperCase()):'VARIANT → LD BLOCK → GENE → RNA → PROTEIN';
+ document.getElementById('viz-caption').textContent=p?(p.kr.toUpperCase()+' · '+p.role.toUpperCase()):'FIVE PEOPLE · ONE LAB';
  P.forEach(q=>q.t0=performance.now())}
 bio(null);
 // canvas — genome locus metaphor
@@ -316,7 +323,7 @@ let seed=11;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
 const GL={choi:'GENE',kjm:'RNA',lsh:'LD BLOCK',pej:'LD BLOCK',lsj:'VARIANT'};
 const LAY={choi:{x0:.56,x1:.9},kjm:{x0:.6,x1:.9,y:.2},lsh:{x0:.08,x1:.3},pej:{x0:.3,x1:.52},lsj:{x:.3}};
 const AXY=.5;
-P.forEach(p=>{const L=document.createElement('div');L.className='nlabel'+(p.pi?' pi':'');L.innerHTML=`<span class="nm">${p.name}</span><span class="rl">${GL[p.id]} · ${p.kr}</span>`;LB.appendChild(L);p.L=L;p.k=0;p.h=0});
+P.forEach(p=>{const L=document.createElement('div');L.className='nlabel'+(p.pi?' pi':'');L.innerHTML=`<span class="nm">${p.name}</span><span class="rl">${p.kr}</span>`;LB.appendChild(L);p.L=L;p.k=0;p.h=0});
 // LD cells
 const LD={};['lsh','pej'].forEach((id,bi)=>{const n=9,cells=[];const c0=bi?.3:.55;for(let i=0;i<n;i++)for(let j=i+1;j<=n;j++){const d=j-i;let r2=Math.max(0,1-d/(n*.9))*(.65+.35*rnd());if(rnd()<.12)r2*=.4;cells.push({i,j,r2,ph:rnd()*6.28})}LD[id]={n,cells}});
 const exons=[[0,.07],[.16,.22],[.31,.36],[.45,.53],[.62,.66],[.76,.84],[.92,1]];
